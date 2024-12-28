@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelReservation.Entity
 {
-    internal class Customer
+    public class Customers
     {
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace HotelReservation.Entity
 {
-    internal class Rooms
+    public class Rooms
     {
         public int RoomId { get; set; }
         public string RoomType { get; set; }
