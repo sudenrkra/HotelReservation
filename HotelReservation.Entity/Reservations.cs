@@ -8,7 +8,7 @@ namespace HotelReservation.Entity
 {
     public class Reservations
     {
-        public int ReservationId { get; set; }
+        private int ReservationId { get; set; }
         public DateTime EntryDate { get; set; }
         public DateTime ReleaseDate { get; set; }
         public int RoomId { get; set; }
