@@ -8,7 +8,7 @@ namespace HotelReservation.Entity
 {
     public class Customers
     {
-        public int CustomerId { get; set; }
+        private int CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string CustomerSurname { get; set; }
         public string Email { get; set; }
