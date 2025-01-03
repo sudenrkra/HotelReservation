@@ -12,6 +12,14 @@ namespace HotelReservation.Entity
         private int RoomId { get; set; }
         public string RoomType { get; set; }
         public decimal Price { get; set; }
-        public string State { get; set; } 
+        public bool State { get; set; }
+        public int GetRoomId()
+        {
+            return RoomId;
+        }
+        public void SetRoomId(int value)
+        {
+            RoomId = value;
+        }
     }
 }
