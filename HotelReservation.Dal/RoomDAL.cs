@@ -29,6 +29,7 @@ namespace HotelReservation.Dal
                 }
             }
         }
+        //Read
         public Rooms GetRoomById(int roomId)
         {
             Rooms room = null;
