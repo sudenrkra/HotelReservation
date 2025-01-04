@@ -76,5 +76,19 @@ namespace HotelReservation.Dal
                 }
             }
         }
+        //Delete
+        public void DeleteBill(Bills billId)
+        {
+            using (var connection = db.GetConnection())
+            {
+                connection.Open();
+                string query = "DELETE FROM Bills WHERE BillId = @BillId";
+                using (var cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@BillId", billId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
