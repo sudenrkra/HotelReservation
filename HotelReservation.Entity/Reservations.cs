@@ -15,5 +15,13 @@ namespace HotelReservation.Entity
         public int CustomerId { get; set; }
         public int BillId { get; set; }
         public string ReservationStatus { get; set; }
+        public int GetReservationId()
+        {
+            return ReservationId;
+        }
+        public void SetReservationId(int value)
+        {
+            ReservationId = value;
+        }
     }
 }
