@@ -73,7 +73,7 @@ namespace HotelReservation.Dal
                     cmd.Parameters.AddWithValue("@CustomerSurname", customer.CustomerSurname);
                     cmd.Parameters.AddWithValue("@Email", customer.Email);
                     cmd.Parameters.AddWithValue("@Phone", customer.Phone);
-                    cmd.Parameters.AddWithValue("@CustomerId", customer.GetCustomerId);
+                    cmd.Parameters.AddWithValue("@CustomerId", customer.GetCustomerId());
                     cmd.ExecuteNonQuery();
                 }
             }
