@@ -30,5 +30,33 @@ namespace HotelReservation.Dal
                 }
             }
         }
+        //Read
+        public Bills GetBillById(int billId)
+        {
+            Bills bill = null;
+            using (var connection = db.GetConnection())
+            {
+                connection.Open();
+                string query = "SELECT * FROM Bills WHERE BillId = @BillId";
+                using (var cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@BillId", billId);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            bill = new Bills();
+                            bill.SetBillId(reader.GetInt32("@BillId"));
+                            bill.BillDate=reader.GetDateTime("@BillDate");
+                            bill.TotalPrice = reader.GetDecimal("@TotalPrice");
+                            bill.ReservationId=reader.GetInt32("@ReservationId");
+                            bill.CustomerId = reader.GetInt32("@CustomerId");
+
+                        }
+                    }
+                }
+            }
+            return bill;
+        }
     }
 }
