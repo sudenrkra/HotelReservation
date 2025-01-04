@@ -58,5 +58,23 @@ namespace HotelReservation.Dal
             }
             return bill;
         }
+        //Update
+        public void UpdateBill(Bills bill)
+        {
+            using (var connection = db.GetConnection())
+            {
+                connection.Open();
+                string query = "UPDATE Bills SET BillDate=@BillDate,TotalPrice=@TotalPrice,ReservationId=@ReservationId,CustomerId=@CustomerId";
+                using (var cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@BillDate", bill.BillDate);
+                    cmd.Parameters.AddWithValue("@TotalPrice", bill.TotalPrice);
+                    cmd.Parameters.AddWithValue("@ReservationId", bill.ReservationId);
+                    cmd.Parameters.AddWithValue("@CustomerId", bill.CustomerId);
+                    cmd.Parameters.AddWithValue("@BillId", bill.GetBillId());
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
