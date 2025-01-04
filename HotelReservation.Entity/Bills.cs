@@ -14,7 +14,14 @@ namespace HotelReservation.Entity
         public decimal TotalPrice { get; set; }
 
         public DateTime BillDate { get; set; }
-
+        public int GetBillId()
+        {
+            return BillId;
+        }
+        public void SetBillId(int value)
+        {
+            BillId = value;
+        }
 
     }
 }
