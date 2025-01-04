@@ -67,7 +67,7 @@ namespace HotelReservation.Dal
                     cmd.Parameters.AddWithValue("@RoomType", room.RoomType);
                     cmd.Parameters.AddWithValue("@Price", room.Price);
                     cmd.Parameters.AddWithValue("@State", room.State);
-                    cmd.Parameters.AddWithValue("@RoomId", room.GetRoomId);
+                    cmd.Parameters.AddWithValue("@RoomId", room.GetRoomId());
                     cmd.ExecuteNonQuery();
 
                 }
