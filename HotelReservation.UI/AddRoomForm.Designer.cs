@@ -1,6 +1,6 @@
 ﻿namespace HotelReservation.UI
 {
-    partial class MainForm
+    partial class AddRoomForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnAddRoom = new Button();
-            SuspendLayout();
-            // 
-            // btnAddRoom
-            // 
-            btnAddRoom.Location = new Point(269, 195);
-            btnAddRoom.Name = "btnAddRoom";
-            btnAddRoom.Size = new Size(94, 29);
-            btnAddRoom.TabIndex = 0;
-            btnAddRoom.Text = "Add Room";
-            btnAddRoom.UseVisualStyleBackColor = true;
-            btnAddRoom.Click += btnAddRoom_Click;
-            // 
-            // MainForm
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnAddRoom);
-            Name = "MainForm";
-            Text = "MainForm";
-            ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "AddRoomForm";
         }
 
         #endregion
-
-        private Button btnAddRoom;
     }
 }
