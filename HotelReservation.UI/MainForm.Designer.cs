@@ -37,7 +37,7 @@
             rezervasyonEkleToolStripMenuItem = new ToolStripMenuItem();
             rezervasyonSilToolStripMenuItem = new ToolStripMenuItem();
             dgvReservations = new DataGridView();
-            button1 = new Button();
+            btnAddReservation = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvReservations).BeginInit();
             SuspendLayout();
@@ -112,24 +112,26 @@
             dgvReservations.Size = new Size(595, 331);
             dgvReservations.TabIndex = 1;
             // 
-            // button1
+            // btnAddReservation
             // 
-            button1.BackColor = Color.Maroon;
-            button1.Font = new Font("Segoe UI", 10F);
-            button1.ForeColor = SystemColors.Control;
-            button1.Location = new Point(25, 69);
-            button1.Name = "button1";
-            button1.Size = new Size(162, 46);
-            button1.TabIndex = 2;
-            button1.Text = "Rezervasyon Ekle";
-            button1.UseVisualStyleBackColor = false;
+            btnAddReservation.BackColor = Color.Maroon;
+            btnAddReservation.Font = new Font("Segoe UI", 10F);
+            btnAddReservation.ForeColor = SystemColors.Control;
+            btnAddReservation.Location = new Point(25, 69);
+            btnAddReservation.Name = "btnAddReservation";
+            btnAddReservation.Size = new Size(162, 46);
+            btnAddReservation.TabIndex = 2;
+            btnAddReservation.Text = "Rezervasyon Ekle";
+            btnAddReservation.TextAlign = ContentAlignment.MiddleLeft;
+            btnAddReservation.UseVisualStyleBackColor = false;
+            btnAddReservation.Click += button1_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 530);
-            Controls.Add(button1);
+            Controls.Add(btnAddReservation);
             Controls.Add(dgvReservations);
             Controls.Add(menuStrip1);
             Name = "MainForm";
@@ -153,6 +155,6 @@
         private ToolStripMenuItem rezervasyonEkleToolStripMenuItem;
         private ToolStripMenuItem rezervasyonSilToolStripMenuItem;
         private DataGridView dgvReservations;
-        private Button button1;
+        private Button btnAddReservation;
     }
 }

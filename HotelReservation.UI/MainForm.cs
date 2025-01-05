@@ -49,12 +49,18 @@ namespace HotelReservation.UI
 
         private void rezervasyonEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void rezervasyonSilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddReservationForm addReservationForm = new AddReservationForm();
+            addReservationForm.Show();
         }
     }
 }
