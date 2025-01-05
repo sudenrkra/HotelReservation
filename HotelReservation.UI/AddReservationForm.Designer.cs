@@ -126,7 +126,7 @@
             // 
             btnSave.BackColor = Color.Firebrick;
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(183, 387);
+            btnSave.Location = new Point(183, 391);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(109, 52);
             btnSave.TabIndex = 11;
@@ -137,7 +137,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(464, 535);
+            ClientSize = new Size(452, 504);
             Controls.Add(btnSave);
             Controls.Add(txtCustomerSurname);
             Controls.Add(txtCustomerName);

@@ -41,7 +41,7 @@ namespace HotelReservation.Dal
                         {
                             room = new Room();
                             room.RoomId = reader.GetInt32("RoomId");
-                            room.RoomType= reader.GetString("RoomType");
+                            room.RoomType= reader.GetBoolean("RoomType");
                             room.Price = reader.GetDecimal("Price");
                             room.State = reader.GetBoolean("State");
                         }

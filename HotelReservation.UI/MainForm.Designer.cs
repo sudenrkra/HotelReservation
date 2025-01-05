@@ -38,6 +38,7 @@
             rezervasyonSilToolStripMenuItem = new ToolStripMenuItem();
             dgvReservations = new DataGridView();
             btnAddReservation = new Button();
+            rezervasyonlToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvReservations).BeginInit();
             SuspendLayout();
@@ -83,7 +84,7 @@
             // 
             // rezervasyonİşlemleriToolStripMenuItem
             // 
-            rezervasyonİşlemleriToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rezervasyonEkleToolStripMenuItem, rezervasyonSilToolStripMenuItem });
+            rezervasyonİşlemleriToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rezervasyonEkleToolStripMenuItem, rezervasyonSilToolStripMenuItem, rezervasyonlToolStripMenuItem });
             rezervasyonİşlemleriToolStripMenuItem.Name = "rezervasyonİşlemleriToolStripMenuItem";
             rezervasyonİşlemleriToolStripMenuItem.Size = new Size(165, 24);
             rezervasyonİşlemleriToolStripMenuItem.Text = "Rezervasyon İşlemleri";
@@ -114,7 +115,7 @@
             // 
             // btnAddReservation
             // 
-            btnAddReservation.BackColor = Color.Maroon;
+            btnAddReservation.BackColor = Color.LimeGreen;
             btnAddReservation.Font = new Font("Segoe UI", 10F);
             btnAddReservation.ForeColor = SystemColors.Control;
             btnAddReservation.Location = new Point(25, 69);
@@ -125,6 +126,12 @@
             btnAddReservation.TextAlign = ContentAlignment.MiddleLeft;
             btnAddReservation.UseVisualStyleBackColor = false;
             btnAddReservation.Click += button1_Click;
+            // 
+            // rezervasyonlToolStripMenuItem
+            // 
+            rezervasyonlToolStripMenuItem.Name = "rezervasyonlToolStripMenuItem";
+            rezervasyonlToolStripMenuItem.Size = new Size(243, 26);
+            rezervasyonlToolStripMenuItem.Text = "Rezervasyon Görüntüle";
             // 
             // MainForm
             // 
@@ -156,5 +163,6 @@
         private ToolStripMenuItem rezervasyonSilToolStripMenuItem;
         private DataGridView dgvReservations;
         private Button btnAddReservation;
+        private ToolStripMenuItem rezervasyonlToolStripMenuItem;
     }
 }
