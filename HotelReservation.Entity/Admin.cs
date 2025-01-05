@@ -2,8 +2,8 @@
 {
     public class Admin
     {
-        private int AdminId { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public int AdminId { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using HotelReservation.Entity;
 
 namespace HotelReservation.Dal
@@ -11,31 +6,31 @@ namespace HotelReservation.Dal
     public class AdminsDAL
     {
         private Database db = new Database(); 
-        public Admin GetAdminByUsernameAndPassword(string username, string password)
+        public Admin GetAdminByUsernameAndPassword(Admin model)
         {
-            Admin admin = null; 
+            Admin entity = null; 
             using (var connection = db.GetConnection())
             { 
                 connection.Open(); 
                 string query = "SELECT * FROM Admins WHERE Email = @Email AND Password = @Password"; 
                 using (var cmd = new MySqlCommand(query, connection)) 
-                { 
-                    cmd.Parameters.AddWithValue("@Email", username);
-                    cmd.Parameters.AddWithValue("@Password", password); 
+                {                   
+                    cmd.Parameters.AddWithValue("@Email", model.Email);
+                    cmd.Parameters.AddWithValue("@Password", model.Password);
                     using (var reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read()) 
+                        if (reader.Read())
                         {
-                            admin = new Admin 
+                            entity = new Admin
                             { 
                                 Email = reader.GetString("Email"),
                                 Password = reader.GetString("Password")
-                            }; 
+                            };
                         }
                     }
                 }
             }
-            return admin;
+            return entity;
         }
     }
 }

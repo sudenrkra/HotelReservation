@@ -5,7 +5,8 @@ namespace HotelReservation.UI
 {
     public partial class LoginForm : Form
     {
-        public Admin admin = new();
+        public AdminsDAL AdminsDAL { get; set; }
+
         public LoginForm()
         {
             InitializeComponent();
@@ -13,15 +14,22 @@ namespace HotelReservation.UI
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            admin.Email = "admin@mail.com";
-            admin.Password = "12345";
+            AdminsDAL = new AdminsDAL();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            if (username == admin.Email && password == admin.Password)
+            Admin model = new Admin()
+            {
+                Email = username, Password = password
+            };
+
+
+            var result = AdminsDAL.GetAdminByUsernameAndPassword(model);
+
+            if(result != null)
             {
                 this.Hide();
                 MainForm mainForm = new MainForm();

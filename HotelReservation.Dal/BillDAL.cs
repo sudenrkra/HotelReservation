@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using HotelReservation.Entity;
 
 namespace HotelReservation.Dal
@@ -23,7 +18,6 @@ namespace HotelReservation.Dal
                 {
                     cmd.Parameters.AddWithValue("@BillDate", bill.BillDate);
                     cmd.Parameters.AddWithValue("@TotalPrice", bill.TotalPrice);
-                    cmd.Parameters.AddWithValue("@CustomerId", bill.CustomerId);
                     cmd.Parameters.AddWithValue("@ReservationId", bill.ReservationId);
                     cmd.ExecuteNonQuery();
 
@@ -46,12 +40,9 @@ namespace HotelReservation.Dal
                         if (reader.Read())
                         {
                             bill = new Bill();
-                            bill.SetBillId(reader.GetInt32("@BillId"));
                             bill.BillDate=reader.GetDateTime("@BillDate");
                             bill.TotalPrice = reader.GetDecimal("@TotalPrice");
                             bill.ReservationId=reader.GetInt32("@ReservationId");
-                            bill.CustomerId = reader.GetInt32("@CustomerId");
-
                         }
                     }
                 }
@@ -70,8 +61,7 @@ namespace HotelReservation.Dal
                     cmd.Parameters.AddWithValue("@BillDate", bill.BillDate);
                     cmd.Parameters.AddWithValue("@TotalPrice", bill.TotalPrice);
                     cmd.Parameters.AddWithValue("@ReservationId", bill.ReservationId);
-                    cmd.Parameters.AddWithValue("@CustomerId", bill.CustomerId);
-                    cmd.Parameters.AddWithValue("@BillId", bill.GetBillId());
+                    cmd.Parameters.AddWithValue("@BillId", bill.BillId);
                     cmd.ExecuteNonQuery();
                 }
             }

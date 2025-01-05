@@ -36,7 +36,10 @@
             rezervasyonİşlemleriToolStripMenuItem = new ToolStripMenuItem();
             rezervasyonEkleToolStripMenuItem = new ToolStripMenuItem();
             rezervasyonSilToolStripMenuItem = new ToolStripMenuItem();
+            dgvReservations = new DataGridView();
+            button1 = new Button();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvReservations).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -60,21 +63,21 @@
             // odaEkleToolStripMenuItem
             // 
             odaEkleToolStripMenuItem.Name = "odaEkleToolStripMenuItem";
-            odaEkleToolStripMenuItem.Size = new Size(174, 26);
+            odaEkleToolStripMenuItem.Size = new Size(224, 26);
             odaEkleToolStripMenuItem.Text = "Oda ekle";
             odaEkleToolStripMenuItem.Click += odaEkleToolStripMenuItem_Click;
             // 
             // odaDüzenleToolStripMenuItem
             // 
             odaDüzenleToolStripMenuItem.Name = "odaDüzenleToolStripMenuItem";
-            odaDüzenleToolStripMenuItem.Size = new Size(174, 26);
+            odaDüzenleToolStripMenuItem.Size = new Size(224, 26);
             odaDüzenleToolStripMenuItem.Text = "oda düzenle";
             odaDüzenleToolStripMenuItem.Click += odaDüzenleToolStripMenuItem_Click;
             // 
             // odaSilToolStripMenuItem
             // 
             odaSilToolStripMenuItem.Name = "odaSilToolStripMenuItem";
-            odaSilToolStripMenuItem.Size = new Size(174, 26);
+            odaSilToolStripMenuItem.Size = new Size(224, 26);
             odaSilToolStripMenuItem.Text = "oda sil";
             odaSilToolStripMenuItem.Click += odaSilToolStripMenuItem_Click;
             // 
@@ -99,17 +102,42 @@
             rezervasyonSilToolStripMenuItem.Text = "Rezervasyon İptal Et";
             rezervasyonSilToolStripMenuItem.Click += rezervasyonSilToolStripMenuItem_Click;
             // 
+            // dgvReservations
+            // 
+            dgvReservations.BackgroundColor = SystemColors.ButtonFace;
+            dgvReservations.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvReservations.Location = new Point(25, 134);
+            dgvReservations.Name = "dgvReservations";
+            dgvReservations.RowHeadersWidth = 51;
+            dgvReservations.Size = new Size(595, 331);
+            dgvReservations.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Maroon;
+            button1.Font = new Font("Segoe UI", 10F);
+            button1.ForeColor = SystemColors.Control;
+            button1.Location = new Point(25, 69);
+            button1.Name = "button1";
+            button1.Size = new Size(162, 46);
+            button1.TabIndex = 2;
+            button1.Text = "Rezervasyon Ekle";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 467);
+            ClientSize = new Size(800, 530);
+            Controls.Add(button1);
+            Controls.Add(dgvReservations);
             Controls.Add(menuStrip1);
             Name = "MainForm";
             Text = "MainForm";
             Load += MainForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvReservations).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -124,5 +152,7 @@
         private ToolStripMenuItem rezervasyonİşlemleriToolStripMenuItem;
         private ToolStripMenuItem rezervasyonEkleToolStripMenuItem;
         private ToolStripMenuItem rezervasyonSilToolStripMenuItem;
+        private DataGridView dgvReservations;
+        private Button button1;
     }
 }

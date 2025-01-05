@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using HotelReservation.Entity;
 
 namespace HotelReservation.Dal
@@ -45,7 +40,7 @@ namespace HotelReservation.Dal
                         if (reader.Read())
                         {
                             room = new Room();
-                            room.SetRoomId(reader.GetInt32("RoomId"));
+                            room.RoomId = reader.GetInt32("RoomId");
                             room.RoomType= reader.GetString("RoomType");
                             room.Price = reader.GetDecimal("Price");
                             room.State = reader.GetBoolean("State");
@@ -67,7 +62,7 @@ namespace HotelReservation.Dal
                     cmd.Parameters.AddWithValue("@RoomType", room.RoomType);
                     cmd.Parameters.AddWithValue("@Price", room.Price);
                     cmd.Parameters.AddWithValue("@State", room.State);
-                    cmd.Parameters.AddWithValue("@RoomId", room.GetRoomId());
+                    cmd.Parameters.AddWithValue("@RoomId", room.RoomId);
                     cmd.ExecuteNonQuery();
 
                 }

@@ -20,7 +20,6 @@ namespace HotelReservation.Dal
                     cmd.Parameters.AddWithValue("@ReleaseDate", reservation.ReleaseDate);
                     cmd.Parameters.AddWithValue("@RoomId", reservation.RoomId);
                     cmd.Parameters.AddWithValue("@BillId", reservation.BillId);
-                    cmd.Parameters.AddWithValue("@CustomerId", reservation.CustomerId);
                     cmd.Parameters.AddWithValue("@ReservationStatus", reservation.ReservationStatus);
                     cmd.ExecuteNonQuery();
                 }
@@ -42,14 +41,12 @@ namespace HotelReservation.Dal
                         if (reader.Read())
                         {
                             reservation = new Reservation();
-                            reservation.SetReservationId(reader.GetInt32("@ReservationId"));
+                            reservation.ReservationId = reader.GetInt32("@ReservationId");   
                             reservation.EntryDate = reader.GetDateTime("@EntryDate");
                             reservation.ReleaseDate = reader.GetDateTime("@ReleaseDate");
                             reservation.RoomId = reader.GetInt32("@RoomId");
-                            reservation.CustomerId = reader.GetInt32("@CustomerId");
                             reservation.BillId = reader.GetInt32("@BillId");
-                            reservation.ReservationStatus = reader.GetString("@ReservationStatus");
-
+                            reservation.ReservationStatus = reader.GetBoolean("@ReservationStatus");
                         }
                     }
                 }
@@ -65,13 +62,12 @@ namespace HotelReservation.Dal
                 string query = "UPDATE Reservations SET EntryDate = @EntryDate, ReleaseDate = @ReleaseDate, RoomId = @RoomId, CustomerId = @CustomerId, BillId = @BillId, ReservationStatus = @ReservationStatus WHERE ReservationId = @ReservationId";
                 using (var cmd = new MySqlCommand(query, connection))
                 {
+                    cmd.Parameters.AddWithValue("@ReservationId", reservation.ReservationId);
                     cmd.Parameters.AddWithValue("@EntryDate", reservation.EntryDate);
                     cmd.Parameters.AddWithValue("@ReleaseDate", reservation.ReleaseDate);
                     cmd.Parameters.AddWithValue("@RoomId", reservation.RoomId);
-                    cmd.Parameters.AddWithValue("@CustomerId", reservation.CustomerId);
                     cmd.Parameters.AddWithValue("@BillId", reservation.BillId);
                     cmd.Parameters.AddWithValue("@ReservationStatus", reservation.ReservationStatus);
-                    cmd.Parameters.AddWithValue("@ReservationId", reservation.GetReservationId);
                     cmd.ExecuteNonQuery();
                 }
             }
