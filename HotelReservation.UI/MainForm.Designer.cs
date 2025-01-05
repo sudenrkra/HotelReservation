@@ -63,21 +63,21 @@
             // odaEkleToolStripMenuItem
             // 
             odaEkleToolStripMenuItem.Name = "odaEkleToolStripMenuItem";
-            odaEkleToolStripMenuItem.Size = new Size(224, 26);
+            odaEkleToolStripMenuItem.Size = new Size(174, 26);
             odaEkleToolStripMenuItem.Text = "Oda ekle";
             odaEkleToolStripMenuItem.Click += odaEkleToolStripMenuItem_Click;
             // 
             // odaDüzenleToolStripMenuItem
             // 
             odaDüzenleToolStripMenuItem.Name = "odaDüzenleToolStripMenuItem";
-            odaDüzenleToolStripMenuItem.Size = new Size(224, 26);
+            odaDüzenleToolStripMenuItem.Size = new Size(174, 26);
             odaDüzenleToolStripMenuItem.Text = "oda düzenle";
             odaDüzenleToolStripMenuItem.Click += odaDüzenleToolStripMenuItem_Click;
             // 
             // odaSilToolStripMenuItem
             // 
             odaSilToolStripMenuItem.Name = "odaSilToolStripMenuItem";
-            odaSilToolStripMenuItem.Size = new Size(224, 26);
+            odaSilToolStripMenuItem.Size = new Size(174, 26);
             odaSilToolStripMenuItem.Text = "oda sil";
             odaSilToolStripMenuItem.Click += odaSilToolStripMenuItem_Click;
             // 
@@ -106,7 +106,7 @@
             // 
             dgvReservations.BackgroundColor = SystemColors.ButtonFace;
             dgvReservations.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvReservations.Location = new Point(25, 134);
+            dgvReservations.Location = new Point(25, 145);
             dgvReservations.Name = "dgvReservations";
             dgvReservations.RowHeadersWidth = 51;
             dgvReservations.Size = new Size(595, 331);

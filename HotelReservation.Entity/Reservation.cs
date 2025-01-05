@@ -17,6 +17,7 @@ namespace HotelReservation.Entity
         public bool ReservationStatus { get; set; }
 
         public Bill Bill { get; set; }  
+        public Room Room { get; set; }
        
     }
 }
