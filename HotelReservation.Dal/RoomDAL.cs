@@ -13,7 +13,7 @@ namespace HotelReservation.Dal
         private Database db = new Database();
 
         //Create
-        public void AddRoom(Rooms room)
+        public void AddRoom(Room room)
         {
             using (var connection = db.GetConnection())
             {
@@ -30,9 +30,9 @@ namespace HotelReservation.Dal
             }
         }
         //Read
-        public Rooms GetRoomById(int roomId)
+        public Room GetRoomById(int roomId)
         {
-            Rooms room = null;
+            Room room = null;
             using (var connection = db.GetConnection())
             {
                 connection.Open();
@@ -44,7 +44,7 @@ namespace HotelReservation.Dal
                     {
                         if (reader.Read())
                         {
-                            room = new Rooms();
+                            room = new Room();
                             room.SetRoomId(reader.GetInt32("RoomId"));
                             room.RoomType= reader.GetString("RoomType");
                             room.Price = reader.GetDecimal("Price");
@@ -56,7 +56,7 @@ namespace HotelReservation.Dal
             return room;
         }
         //Update
-        public void UpdateRoom(Rooms room)
+        public void UpdateRoom(Room room)
         {
             using (var connection = db.GetConnection())
             {

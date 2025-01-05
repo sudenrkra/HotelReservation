@@ -13,7 +13,7 @@ namespace HotelReservation.Dal
         private Database db = new Database();
 
         //Create
-        public void AddBill(Bills bill)
+        public void AddBill(Bill bill)
         {
             using (var connection = db.GetConnection())
             {
@@ -31,9 +31,9 @@ namespace HotelReservation.Dal
             }
         }
         //Read
-        public Bills GetBillById(int billId)
+        public Bill GetBillById(int billId)
         {
-            Bills bill = null;
+            Bill bill = null;
             using (var connection = db.GetConnection())
             {
                 connection.Open();
@@ -45,7 +45,7 @@ namespace HotelReservation.Dal
                     {
                         if (reader.Read())
                         {
-                            bill = new Bills();
+                            bill = new Bill();
                             bill.SetBillId(reader.GetInt32("@BillId"));
                             bill.BillDate=reader.GetDateTime("@BillDate");
                             bill.TotalPrice = reader.GetDecimal("@TotalPrice");
@@ -59,7 +59,7 @@ namespace HotelReservation.Dal
             return bill;
         }
         //Update
-        public void UpdateBill(Bills bill)
+        public void UpdateBill(Bill bill)
         {
             using (var connection = db.GetConnection())
             {
@@ -77,7 +77,7 @@ namespace HotelReservation.Dal
             }
         }
         //Delete
-        public void DeleteBill(Bills billId)
+        public void DeleteBill(Bill billId)
         {
             using (var connection = db.GetConnection())
             {

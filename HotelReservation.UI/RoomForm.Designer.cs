@@ -1,6 +1,6 @@
 ﻿namespace HotelReservation.UI
 {
-    partial class AddRoomForm
+    partial class RoomForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AddRoomForm";
+            SuspendLayout();
+            // 
+            // AddRoomForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 473);
+            Name = "AddRoomForm";
+            Text = "AddRoomForm";
+            ResumeLayout(false);
         }
 
         #endregion

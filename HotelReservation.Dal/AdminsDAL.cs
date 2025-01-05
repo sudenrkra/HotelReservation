@@ -11,9 +11,9 @@ namespace HotelReservation.Dal
     public class AdminsDAL
     {
         private Database db = new Database(); 
-        public Admins GetAdminByUsernameAndPassword(string username, string password)
+        public Admin GetAdminByUsernameAndPassword(string username, string password)
         {
-            Admins admin = null; 
+            Admin admin = null; 
             using (var connection = db.GetConnection())
             { 
                 connection.Open(); 
@@ -26,7 +26,7 @@ namespace HotelReservation.Dal
                     {
                         if (reader.Read()) 
                         {
-                            admin = new Admins 
+                            admin = new Admin 
                             { 
                                 Email = reader.GetString("Email"),
                                 Password = reader.GetString("Password")

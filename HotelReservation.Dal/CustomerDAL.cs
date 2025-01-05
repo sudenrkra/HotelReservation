@@ -15,7 +15,7 @@ namespace HotelReservation.Dal
         private Database db = new Database();
 
         //Create(Insert)
-        public void AddCustomer(Customers customer)
+        public void AddCustomer(Customer customer)
         {
             using (var connection = db.GetConnection())
             {
@@ -32,9 +32,9 @@ namespace HotelReservation.Dal
             }
         }
         //Read(Select)
-        public Customers GetCustomersById(int CustomerId)
+        public Customer GetCustomersById(int CustomerId)
         {
-            Customers customer = null;
+            Customer customer = null;
             using (var connection = db.GetConnection())
             {
                 connection.Open();
@@ -46,7 +46,7 @@ namespace HotelReservation.Dal
                     {
                         if (reader.Read())
                         {
-                            customer = new Customers();
+                            customer = new Customer();
                             {
                                 customer.SetCustomerId( reader.GetInt32("CustomerId"));
                                 customer.CustomerName = reader.GetString("CustomerName");
@@ -61,7 +61,7 @@ namespace HotelReservation.Dal
             return customer;
         }
         //Update
-        public void UpdateCustomer(Customers customer)
+        public void UpdateCustomer(Customer customer)
         {
             using (var connection = db.GetConnection())
             {

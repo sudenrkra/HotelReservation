@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿
 namespace HotelReservation.UI
 {
     public partial class MainForm : Form
@@ -17,10 +8,53 @@ namespace HotelReservation.UI
             InitializeComponent();
         }
 
-        private void btnAddRoom_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            AddRoomForm addRoomForm = new AddRoomForm();
-            addRoomForm.Show();
+
+        }
+
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void odaEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RoomForm roomForm = new RoomForm();
+            roomForm.Show();
+
+        }
+
+        private void odaDüzenleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RoomForm roomForm = new RoomForm();
+            roomForm.Show();
+        }
+
+        private void odaSilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RoomForm roomForm = new RoomForm();
+            roomForm.Show();
+        }
+
+        private void rezervasyonEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void rezervasyonSilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }

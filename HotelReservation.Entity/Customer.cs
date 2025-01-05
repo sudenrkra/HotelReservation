@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace HotelReservation.Entity
 {
-    public class Customers
+    public class Customer
     {
         private int CustomerId { get; set; }
         public string CustomerName { get; set; }

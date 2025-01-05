@@ -1,6 +1,6 @@
 ﻿namespace HotelReservation.Entity
 {
-    public class Admins
+    public class Admin
     {
         private int AdminId { get; set; }
         public string Email { get; set; }

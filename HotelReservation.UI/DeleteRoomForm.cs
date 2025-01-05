@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HotelReservation.UI
 {
-    public partial class AddRoomForm : Form
+    public partial class DeleteRoomForm : Form
     {
-        public AddRoomForm()
+        public DeleteRoomForm()
         {
             InitializeComponent();
+        }
+
+        private void DeleteRoomForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using HotelReservation.Entity;
 
 namespace HotelReservation.Dal
@@ -13,7 +8,7 @@ namespace HotelReservation.Dal
         private Database db = new Database();
 
         //Create
-        public void AddReservation(Reservations reservation)
+        public void AddReservation(Reservation reservation)
         {
             using (var connection = db.GetConnection())
             {
@@ -32,9 +27,9 @@ namespace HotelReservation.Dal
             }
         }
         //Read
-        public Reservations GetReservationById(int reservationId)
+        public Reservation GetReservationById(int reservationId)
         {
-            Reservations reservation = null;
+            Reservation reservation = null;
             using (var connection = db.GetConnection())
             {
                 connection.Open();
@@ -46,7 +41,7 @@ namespace HotelReservation.Dal
                     {
                         if (reader.Read())
                         {
-                            reservation = new Reservations();
+                            reservation = new Reservation();
                             reservation.SetReservationId(reader.GetInt32("@ReservationId"));
                             reservation.EntryDate = reader.GetDateTime("@EntryDate");
                             reservation.ReleaseDate = reader.GetDateTime("@ReleaseDate");
@@ -62,7 +57,7 @@ namespace HotelReservation.Dal
             return reservation;
         }
         //Update
-        public void UpdateReservation(Reservations reservation)
+        public void UpdateReservation(Reservation reservation)
         {
             using (var connection = db.GetConnection())
             {
@@ -82,7 +77,7 @@ namespace HotelReservation.Dal
             }
         }
         //Delete
-        public void DeleteReservation(Reservations reservationId)
+        public void DeleteReservation(Reservation reservationId)
         {
             using (var connection = db.GetConnection())
             {
