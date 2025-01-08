@@ -35,10 +35,12 @@
             label5 = new Label();
             dtpEntryDate = new DateTimePicker();
             dtpReleaseDate = new DateTimePicker();
-            cmbRoomId = new ComboBox();
             txtCustomerName = new TextBox();
             txtCustomerSurname = new TextBox();
             btnSave = new Button();
+            txtRoomId = new TextBox();
+            label6 = new Label();
+            txtPhone = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -100,14 +102,6 @@
             dtpReleaseDate.Size = new Size(196, 27);
             dtpReleaseDate.TabIndex = 6;
             // 
-            // cmbRoomId
-            // 
-            cmbRoomId.FormattingEnabled = true;
-            cmbRoomId.Location = new Point(183, 314);
-            cmbRoomId.Name = "cmbRoomId";
-            cmbRoomId.Size = new Size(71, 28);
-            cmbRoomId.TabIndex = 8;
-            // 
             // txtCustomerName
             // 
             txtCustomerName.Location = new Point(183, 65);
@@ -126,22 +120,48 @@
             // 
             btnSave.BackColor = Color.Firebrick;
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(183, 391);
+            btnSave.Location = new Point(331, 440);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(109, 52);
             btnSave.TabIndex = 11;
             btnSave.Text = "KAYDET";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
+            // 
+            // txtRoomId
+            // 
+            txtRoomId.Location = new Point(183, 317);
+            txtRoomId.Name = "txtRoomId";
+            txtRoomId.Size = new Size(90, 27);
+            txtRoomId.TabIndex = 12;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(59, 384);
+            label6.Name = "label6";
+            label6.Size = new Size(53, 20);
+            label6.TabIndex = 13;
+            label6.Text = "Phone:";
+            // 
+            // txtPhone
+            // 
+            txtPhone.Location = new Point(183, 377);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(90, 27);
+            txtPhone.TabIndex = 14;
             // 
             // AddReservationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(452, 504);
+            Controls.Add(txtPhone);
+            Controls.Add(label6);
+            Controls.Add(txtRoomId);
             Controls.Add(btnSave);
             Controls.Add(txtCustomerSurname);
             Controls.Add(txtCustomerName);
-            Controls.Add(cmbRoomId);
             Controls.Add(dtpReleaseDate);
             Controls.Add(dtpEntryDate);
             Controls.Add(label5);
@@ -151,6 +171,7 @@
             Controls.Add(label1);
             Name = "AddReservationForm";
             Text = "AddReservationForm";
+            Load += AddReservationForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,9 +185,11 @@
         private Label label5;
         private DateTimePicker dtpEntryDate;
         private DateTimePicker dtpReleaseDate;
-        private ComboBox cmbRoomId;
         private TextBox txtCustomerName;
         private TextBox txtCustomerSurname;
         private Button btnSave;
+        private TextBox txtRoomId;
+        private Label label6;
+        private TextBox txtPhone;
     }
 }

@@ -36,9 +36,9 @@
             rezervasyonİşlemleriToolStripMenuItem = new ToolStripMenuItem();
             rezervasyonEkleToolStripMenuItem = new ToolStripMenuItem();
             rezervasyonSilToolStripMenuItem = new ToolStripMenuItem();
+            rezervasyonlToolStripMenuItem = new ToolStripMenuItem();
             dgvReservations = new DataGridView();
             btnAddReservation = new Button();
-            rezervasyonlToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvReservations).BeginInit();
             SuspendLayout();
@@ -92,16 +92,22 @@
             // rezervasyonEkleToolStripMenuItem
             // 
             rezervasyonEkleToolStripMenuItem.Name = "rezervasyonEkleToolStripMenuItem";
-            rezervasyonEkleToolStripMenuItem.Size = new Size(225, 26);
+            rezervasyonEkleToolStripMenuItem.Size = new Size(243, 26);
             rezervasyonEkleToolStripMenuItem.Text = "Rezervasyon Ekle";
             rezervasyonEkleToolStripMenuItem.Click += rezervasyonEkleToolStripMenuItem_Click;
             // 
             // rezervasyonSilToolStripMenuItem
             // 
             rezervasyonSilToolStripMenuItem.Name = "rezervasyonSilToolStripMenuItem";
-            rezervasyonSilToolStripMenuItem.Size = new Size(225, 26);
+            rezervasyonSilToolStripMenuItem.Size = new Size(243, 26);
             rezervasyonSilToolStripMenuItem.Text = "Rezervasyon İptal Et";
             rezervasyonSilToolStripMenuItem.Click += rezervasyonSilToolStripMenuItem_Click;
+            // 
+            // rezervasyonlToolStripMenuItem
+            // 
+            rezervasyonlToolStripMenuItem.Name = "rezervasyonlToolStripMenuItem";
+            rezervasyonlToolStripMenuItem.Size = new Size(243, 26);
+            rezervasyonlToolStripMenuItem.Text = "Rezervasyon Görüntüle";
             // 
             // dgvReservations
             // 
@@ -126,12 +132,6 @@
             btnAddReservation.TextAlign = ContentAlignment.MiddleLeft;
             btnAddReservation.UseVisualStyleBackColor = false;
             btnAddReservation.Click += button1_Click;
-            // 
-            // rezervasyonlToolStripMenuItem
-            // 
-            rezervasyonlToolStripMenuItem.Name = "rezervasyonlToolStripMenuItem";
-            rezervasyonlToolStripMenuItem.Size = new Size(243, 26);
-            rezervasyonlToolStripMenuItem.Text = "Rezervasyon Görüntüle";
             // 
             // MainForm
             // 

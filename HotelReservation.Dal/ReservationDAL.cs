@@ -44,7 +44,7 @@ namespace HotelReservation.Dal
                         if (reader.Read())
                         {
                             reservation = new Reservation();
-                            reservation.ReservationId = reader.GetInt32("@ReservationId");   
+                            reservation.ReservationId = reader.GetInt32("@ReservationId");
                             reservation.EntryDate = reader.GetDateTime("@EntryDate");
                             reservation.ReleaseDate = reader.GetDateTime("@ReleaseDate");
                             reservation.RoomId = reader.GetInt32("@RoomId");
@@ -95,5 +95,41 @@ namespace HotelReservation.Dal
                 }
             }
         }
+
+            // GetReservationsByRoom
+
+            public List<Reservation> GetReservationsByRoom(int roomId)
+            {
+                List<Reservation> reservations = new List<Reservation>();
+                using (var connection = db.GetConnection())
+                {
+                    connection.Open(); string query = "SELECT * FROM Reservations WHERE RoomId = @RoomId";
+                    using (var cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@RoomId", roomId);
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Reservation reservation = new Reservation
+                                {
+                                    ReservationId = reader.GetInt32("ReservationId"),
+                                    EntryDate = reader.GetDateTime("EntryDate"),
+                                    ReleaseDate = reader.GetDateTime("ReleaseDate"),
+                                    RoomId = reader.GetInt32("RoomId"),
+                                    BillId = reader.GetInt32("BillId"),
+                                    CustomerName = reader.GetString("CustomerName"),
+                                    CustomerSurname = reader.GetString("CustomerSurname"),
+                                    Phone = reader.GetChar("Phone"),
+                                    ReservationStatus = reader.GetBoolean("ReservationStatus")
+                                };
+                                reservations.Add(reservation);
+                            }
+                        }
+                    }
+                }
+                return reservations;
+            }
+        }
     }
-}
+

@@ -1,11 +1,16 @@
 ﻿
+using HotelReservation.Entity;
+using System.Drawing.Text;
+
 namespace HotelReservation.UI
 {
     public partial class MainForm : Form
     {
+        private List<Reservation> reservations = new List<Reservation>();
         public MainForm()
         {
             InitializeComponent();
+            reservations = new List<Reservation>();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -62,5 +67,18 @@ namespace HotelReservation.UI
             AddReservationForm addReservationForm = new AddReservationForm();
             addReservationForm.Show();
         }
+
+        public void AddReservation(Reservation reservation)
+        {
+            reservations.Add(reservation);
+            LoadReservations();
+        }
+
+        private void LoadReservations() 
+        {
+            dgvReservations.DataSource = null;
+            dgvReservations.DataSource = reservations;
+        }
+
     }
 }

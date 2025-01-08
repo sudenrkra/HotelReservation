@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HotelReservation.Bll\HotelReservation.Bll.csproj" />
     <ProjectReference Include="..\HotelReservation.Dal\HotelReservation.Dal.csproj" />
     <ProjectReference Include="..\HotelReservation.Entity\HotelReservation.Entity.csproj" />
   </ItemGroup>
