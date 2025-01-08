@@ -8,7 +8,7 @@ namespace HotelReservation.Dal
         private Database db = new Database(); 
         public Admin GetAdminByUsernameAndPassword(Admin model)
         {
-            Admin entity = null; 
+            Admin? entity = null; 
             using (var connection = db.GetConnection())
             { 
                 connection.Open(); 

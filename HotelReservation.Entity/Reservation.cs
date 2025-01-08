@@ -13,7 +13,7 @@ namespace HotelReservation.Entity
         public DateTime ReleaseDate { get; set; }
         public string? CustomerName { get; set; }
         public string? CustomerSurname { get; set; }
-        public string? Email { get; set; }
+        public char Phone { get; set; }
         public bool ReservationStatus { get; set; }
 
         public Bill Bill { get; set; }  
