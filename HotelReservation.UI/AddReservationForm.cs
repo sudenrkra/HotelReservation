@@ -16,6 +16,16 @@ namespace HotelReservation.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
+            DateTime entryDate = dtpEntryDate.Value;
+            DateTime releaseDate = dtpReleaseDate.Value;
+
+            if (entryDate >= releaseDate)
+            { 
+                MessageBox.Show("Başlangıç tarihi, bitiş tarihinden sonra olamaz."); 
+                return; 
+            }
+
             Reservation newReservation = new Reservation
             {
                 RoomId = int.Parse(txtRoomId.Text),
