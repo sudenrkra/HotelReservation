@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelReservation.Dal", "Hot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelReservation.Bll", "HotelReservation.Bll\HotelReservation.Bll.csproj", "{88B93214-2681-4A3C-A79F-D09E065F5C9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelReservation.UI", "HotelReservation.UI\HotelReservation.UI.csproj", "{26584742-1760-4C6E-8AE9-46BCFEFF12B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelReservation.UI", "HotelReservation.UI\HotelReservation.UI.csproj", "{26584742-1760-4C6E-8AE9-46BCFEFF12B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -39,7 +39,7 @@
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(232, 127);
+            lblUsername.Location = new Point(120, 127);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(78, 20);
             lblUsername.TabIndex = 0;
@@ -48,7 +48,7 @@
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(232, 223);
+            lblPassword.Location = new Point(125, 223);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(73, 20);
             lblPassword.TabIndex = 1;
@@ -56,21 +56,21 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(332, 124);
+            txtUsername.Location = new Point(232, 127);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(125, 27);
             txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(332, 216);
+            txtPassword.Location = new Point(232, 220);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(125, 27);
             txtPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(343, 307);
+            btnLogin.Location = new Point(232, 340);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(94, 29);
             btnLogin.TabIndex = 4;
@@ -90,13 +90,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 475);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(510, 499);
             Controls.Add(label1);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
             Controls.Add(lblPassword);
             Controls.Add(lblUsername);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "LoginForm";
             Text = "Form1";
             Load += LoginForm_Load;
