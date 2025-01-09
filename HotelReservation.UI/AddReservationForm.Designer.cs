@@ -55,7 +55,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(52, 260);
+            label2.Location = new Point(49, 260);
             label2.Name = "label2";
             label2.Size = new Size(79, 20);
             label2.TabIndex = 1;
@@ -82,7 +82,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(52, 317);
+            label5.Location = new Point(49, 324);
             label5.Name = "label5";
             label5.Size = new Size(57, 20);
             label5.TabIndex = 4;
@@ -120,7 +120,7 @@
             // 
             btnSave.BackColor = Color.Firebrick;
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(331, 440);
+            btnSave.Location = new Point(183, 526);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(109, 52);
             btnSave.TabIndex = 11;
@@ -138,7 +138,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(59, 384);
+            label6.Location = new Point(49, 384);
             label6.Name = "label6";
             label6.Size = new Size(53, 20);
             label6.TabIndex = 13;
@@ -155,7 +155,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(452, 504);
+            ClientSize = new Size(509, 608);
             Controls.Add(txtPhone);
             Controls.Add(label6);
             Controls.Add(txtRoomId);

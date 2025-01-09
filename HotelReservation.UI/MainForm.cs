@@ -1,6 +1,8 @@
 ﻿
+using HotelReservation.Bll;
 using HotelReservation.Entity;
 using System.Drawing.Text;
+using System.Windows.Forms;
 
 namespace HotelReservation.UI
 {
@@ -15,7 +17,7 @@ namespace HotelReservation.UI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            UpdateReservationGrid();
         }
 
 
@@ -64,19 +66,15 @@ namespace HotelReservation.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddReservationForm addReservationForm = new AddReservationForm();
+            AddReservationForm addReservationForm = new AddReservationForm(this);
             addReservationForm.Show();
         }
 
-        public void AddReservation(Reservation reservation)
-        {
-            reservations.Add(reservation);
-            LoadReservations();
-        }
 
-        private void LoadReservations() 
+        public void UpdateReservationGrid()
         {
-            dgvReservations.DataSource = null;
+            ReservationService reservationService = new ReservationService();
+            List<Reservation> reservations = reservationService.GetAllReservations();
             dgvReservations.DataSource = reservations;
         }
 

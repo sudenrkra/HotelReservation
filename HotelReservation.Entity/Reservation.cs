@@ -13,8 +13,5 @@ namespace HotelReservation.Entity
         public char Phone { get; set; }
         public bool ReservationStatus { get; set; }
 
-        public Bill Bill { get; set; }  
-        public Room Room { get; set; }
-       
     }
 }

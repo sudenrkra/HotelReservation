@@ -7,10 +7,11 @@ namespace HotelReservation.UI
 {
     public partial class AddReservationForm : Form
     {
-        private MainForm mainForm;
-        public AddReservationForm()
+        private MainForm _mainForm;
+        public AddReservationForm(MainForm mainForm)
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            _mainForm = mainForm;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -31,9 +32,10 @@ namespace HotelReservation.UI
             if (success)
             {
                 MessageBox.Show("Rezervasyon başarıyla eklendi!");
-                mainForm.AddReservation(newReservation);
+                _mainForm.UpdateReservationGrid();
                 this.Close();
             }
+
             else
             {
                 MessageBox.Show("Rezervasyon eklenirken bir hata oluştu.");

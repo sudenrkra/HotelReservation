@@ -50,7 +50,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { odaİşlemleriToolStripMenuItem, rezervasyonİşlemleriToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Size = new Size(1186, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -116,7 +116,7 @@
             dgvReservations.Location = new Point(25, 145);
             dgvReservations.Name = "dgvReservations";
             dgvReservations.RowHeadersWidth = 51;
-            dgvReservations.Size = new Size(595, 331);
+            dgvReservations.Size = new Size(1136, 403);
             dgvReservations.TabIndex = 1;
             // 
             // btnAddReservation
@@ -137,7 +137,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 530);
+            ClientSize = new Size(1186, 585);
             Controls.Add(btnAddReservation);
             Controls.Add(dgvReservations);
             Controls.Add(menuStrip1);

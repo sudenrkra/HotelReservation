@@ -96,7 +96,38 @@ namespace HotelReservation.Dal
             }
         }
 
-            // GetReservationsByRoom
+        public List<Reservation> GetAllReservations()
+        {
+            List<Reservation> reservations = new List<Reservation>();
+            using (var connection = db.GetConnection())
+            {
+                connection.Open(); string query = "SELECT * FROM Reservations";
+                using (var cmd = new MySqlCommand(query, connection))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Reservation reservation = new Reservation
+                            {
+                                ReservationId = reader.GetInt32("ReservationId"),
+                                EntryDate = reader.GetDateTime("EntryDate"),
+                                ReleaseDate = reader.GetDateTime("ReleaseDate"),
+                                RoomId = reader.GetInt32("RoomId"),
+                                BillId = reader.GetInt32("BillId"),
+                                CustomerName = reader.GetString("CustomerName"),
+                                CustomerSurname = reader.GetString("CustomerSurname"),
+                                Phone = reader.GetChar("Phone"),
+                                ReservationStatus = reader.GetBoolean("ReservationStatus")
+                            };
+                            reservations.Add(reservation);
+                        }
+                    }
+                }
+            }
+            return reservations;
+        }
+
 
             public List<Reservation> GetReservationsByRoom(int roomId)
             {

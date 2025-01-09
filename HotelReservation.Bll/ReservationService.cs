@@ -14,6 +14,11 @@ namespace HotelReservation.Bll
             _roomDAL = new RoomDAL();
         }
 
+        public List<Reservation> GetAllReservations()
+        {
+            return _reservationDAL.GetAllReservations();
+        }
+
         public bool MakeReservation(Reservation reservation)
         {
             if (IsRoomAvailable(reservation.RoomId, reservation.EntryDate, reservation.ReleaseDate))
