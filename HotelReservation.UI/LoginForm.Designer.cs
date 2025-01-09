@@ -33,72 +33,69 @@
             txtUsername = new TextBox();
             txtPassword = new TextBox();
             btnLogin = new Button();
-            label1 = new Label();
             SuspendLayout();
             // 
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(120, 127);
+            lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            lblUsername.ForeColor = SystemColors.ControlLightLight;
+            lblUsername.Location = new Point(92, 127);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(78, 20);
+            lblUsername.Size = new Size(103, 28);
             lblUsername.TabIndex = 0;
             lblUsername.Text = "Username:";
+            lblUsername.TextAlign = ContentAlignment.TopCenter;
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(125, 223);
+            lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            lblPassword.ForeColor = SystemColors.ControlLightLight;
+            lblPassword.Location = new Point(92, 219);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(73, 20);
+            lblPassword.Size = new Size(97, 28);
             lblPassword.TabIndex = 1;
             lblPassword.Text = "Password:";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(232, 127);
+            txtUsername.Location = new Point(228, 131);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(125, 27);
+            txtUsername.Size = new Size(163, 27);
             txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(232, 220);
+            txtPassword.Location = new Point(228, 220);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(125, 27);
+            txtPassword.Size = new Size(163, 27);
             txtPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(232, 340);
+            btnLogin.BackColor = Color.SpringGreen;
+            btnLogin.Cursor = Cursors.AppStarting;
+            btnLogin.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            btnLogin.Location = new Point(191, 324);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(94, 29);
+            btnLogin.Size = new Size(94, 44);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(353, 50);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 20);
-            label1.TabIndex = 5;
             // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            ClientSize = new Size(510, 499);
-            Controls.Add(label1);
+            BackColor = Color.DarkSlateGray;
+            ClientSize = new Size(482, 499);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
             Controls.Add(lblPassword);
             Controls.Add(lblUsername);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "LoginForm";
             Text = "Form1";
             Load += LoginForm_Load;
@@ -113,6 +110,5 @@
         private TextBox txtUsername;
         private TextBox txtPassword;
         private Button btnLogin;
-        private Label label1;
     }
 }
