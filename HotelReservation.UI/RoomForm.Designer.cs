@@ -50,7 +50,7 @@
             dgvRooms.Location = new Point(44, 432);
             dgvRooms.Name = "dgvRooms";
             dgvRooms.RowHeadersWidth = 51;
-            dgvRooms.Size = new Size(948, 138);
+            dgvRooms.Size = new Size(669, 138);
             dgvRooms.TabIndex = 0;
             dgvRooms.SelectionChanged += dgvRooms_SelectionChanged;
             // 
