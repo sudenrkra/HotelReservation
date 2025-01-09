@@ -137,6 +137,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(1186, 585);
             Controls.Add(btnAddReservation);
             Controls.Add(dgvReservations);
