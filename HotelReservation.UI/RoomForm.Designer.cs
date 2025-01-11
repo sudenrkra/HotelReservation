@@ -40,8 +40,10 @@
             btnUpdateRoom = new Button();
             btnDeleteRoom = new Button();
             picRoom = new PictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvRooms).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picRoom).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvRooms
@@ -159,12 +161,24 @@
             picRoom.TabIndex = 11;
             picRoom.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.back_button;
+            pictureBox1.Location = new Point(44, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(48, 46);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // RoomForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
             ClientSize = new Size(1031, 727);
+            Controls.Add(pictureBox1);
             Controls.Add(picRoom);
             Controls.Add(btnDeleteRoom);
             Controls.Add(btnUpdateRoom);
@@ -182,6 +196,7 @@
             Load += RoomForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvRooms).EndInit();
             ((System.ComponentModel.ISupportInitialize)picRoom).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -200,5 +215,6 @@
         private Button btnUpdateRoom;
         private Button btnDeleteRoom;
         private PictureBox picRoom;
+        private PictureBox pictureBox1;
     }
 }

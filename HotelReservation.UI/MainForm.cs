@@ -35,7 +35,7 @@ namespace HotelReservation.UI
         private void odaEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RoomForm roomForm = new RoomForm();
+            RoomForm roomForm = new RoomForm(this);
             roomForm.Show();
 
         }
@@ -43,14 +43,14 @@ namespace HotelReservation.UI
         private void odaDüzenleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RoomForm roomForm = new RoomForm();
+            RoomForm roomForm = new RoomForm(this);
             roomForm.Show();
         }
 
         private void odaSilToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RoomForm roomForm = new RoomForm();
+            RoomForm roomForm = new RoomForm(this);
             roomForm.Show();
         }
 

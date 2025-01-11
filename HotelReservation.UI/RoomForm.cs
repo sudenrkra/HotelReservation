@@ -7,11 +7,13 @@ namespace HotelReservation.UI
     public partial class RoomForm : Form
     {
         private RoomService _roomService;
-        public RoomForm()
+        private Form previousForm;
+        public RoomForm(Form previousForm)
         {
             InitializeComponent();
             _roomService = new RoomService();
             LoadRooms();
+            this.previousForm = previousForm;
         }
 
         private void RoomForm_Load(object sender, EventArgs e)
@@ -25,7 +27,7 @@ namespace HotelReservation.UI
             dgvRooms.Columns["ImagePath"].Visible = false;
         }
 
-        
+
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
@@ -104,20 +106,26 @@ namespace HotelReservation.UI
         }
 
         private void dgvRooms_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvRooms.SelectedRows.Count > 0)
             {
-                if (dgvRooms.SelectedRows.Count > 0)
+                txtRoomType.Text = dgvRooms.SelectedRows[0].Cells["RoomType"].Value.ToString();
+                txtPrice.Text = dgvRooms.SelectedRows[0].Cells["Price"].Value.ToString();
+                chkState.Checked = Convert.ToBoolean(dgvRooms.SelectedRows[0].Cells["State"].Value);
+                txtCapacity.Text = dgvRooms.SelectedRows[0].Cells["Capacity"].Value.ToString();
+                string imagePath = dgvRooms.SelectedRows[0].Cells["ImagePath"].Value.ToString();
+                if (File.Exists(imagePath))
                 {
-                    txtRoomType.Text = dgvRooms.SelectedRows[0].Cells["RoomType"].Value.ToString();
-                    txtPrice.Text = dgvRooms.SelectedRows[0].Cells["Price"].Value.ToString();
-                    chkState.Checked = Convert.ToBoolean(dgvRooms.SelectedRows[0].Cells["State"].Value);
-                    txtCapacity.Text = dgvRooms.SelectedRows[0].Cells["Capacity"].Value.ToString();
-                    string imagePath = dgvRooms.SelectedRows[0].Cells["ImagePath"].Value.ToString();
-                    if (File.Exists(imagePath))
-                    {
-                        picRoom.Image = Image.FromFile(imagePath);
-                    }
+                    picRoom.Image = Image.FromFile(imagePath);
                 }
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.previousForm.Show();
+            this.Close();
+        }
     }
+}
 
