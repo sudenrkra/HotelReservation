@@ -10,5 +10,16 @@ namespace HotelReservation.Dal
         {
             return new MySqlConnection(connectionString);
         }
+
+        public void CancelReservation(int reservationId)
+        {
+            string query = "DELETE FROM Reservations WHERE ReservationId = @reservationId";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@reservationId", reservationId);
+                connection.Open(); command.ExecuteNonQuery();
+            }
+        }
     }
 }

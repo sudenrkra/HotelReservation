@@ -78,5 +78,20 @@ namespace HotelReservation.UI
             dgvReservations.DataSource = reservations;
         }
 
+        private void btnCancelReservation_Click(object sender, EventArgs e)
+        {
+            if (dgvReservations.SelectedRows.Count > 0)
+            {
+                int reservationId = Convert.ToInt32(dgvReservations.SelectedRows[0].Cells["ReservationId"].Value);
+                ReservationService reservationService = new ReservationService();
+                reservationService.CancelReservation(reservationId);
+
+                UpdateReservationGrid();
+            }
+            else
+            {
+                MessageBox.Show("Lütfen iptal etmek için bir rezervasyon seçin.");
+            }
+        }
     }
 }

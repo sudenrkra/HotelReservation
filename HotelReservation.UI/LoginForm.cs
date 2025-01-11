@@ -39,27 +39,7 @@ namespace HotelReservation.UI
             {
                 MessageBox.Show("Kullanýcý adý veya þifre yanlýþ.");
             }
-                /*  Admin model = new Admin()
-                  {
-                      Email = username, Password = password
-                  };
 
-
-
-                  var result = AdminsDAL.GetAdminByUsernameAndPassword(model);
-
-                  if(result != null)
-                  {
-                      this.Hide();
-                      MainForm mainForm = new MainForm();
-                      mainForm.Show();
-                  }
-                  else
-                  {
-                      label1.Text = "Eposta ve/veya þifre hatalý";
-                      label1.BackColor = Color.MediumVioletRed;
-                  }
-                */
-            }
+        }
     }
 }

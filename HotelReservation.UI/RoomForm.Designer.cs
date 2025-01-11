@@ -53,7 +53,7 @@
             dgvRooms.Location = new Point(44, 561);
             dgvRooms.Name = "dgvRooms";
             dgvRooms.RowHeadersWidth = 51;
-            dgvRooms.Size = new Size(669, 138);
+            dgvRooms.Size = new Size(710, 138);
             dgvRooms.TabIndex = 0;
             dgvRooms.SelectionChanged += dgvRooms_SelectionChanged;
             // 
@@ -134,7 +134,7 @@
             // btnUpdateRoom
             // 
             btnUpdateRoom.BackColor = Color.LightSkyBlue;
-            btnUpdateRoom.Location = new Point(291, 514);
+            btnUpdateRoom.Location = new Point(317, 514);
             btnUpdateRoom.Name = "btnUpdateRoom";
             btnUpdateRoom.Size = new Size(164, 29);
             btnUpdateRoom.TabIndex = 9;
@@ -145,7 +145,7 @@
             // btnDeleteRoom
             // 
             btnDeleteRoom.BackColor = Color.Red;
-            btnDeleteRoom.Location = new Point(535, 514);
+            btnDeleteRoom.Location = new Point(576, 514);
             btnDeleteRoom.Name = "btnDeleteRoom";
             btnDeleteRoom.Size = new Size(178, 29);
             btnDeleteRoom.TabIndex = 10;

@@ -39,6 +39,7 @@
             rezervasyonlToolStripMenuItem = new ToolStripMenuItem();
             dgvReservations = new DataGridView();
             btnAddReservation = new Button();
+            btnCancelReservation = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvReservations).BeginInit();
             SuspendLayout();
@@ -64,22 +65,22 @@
             // odaEkleToolStripMenuItem
             // 
             odaEkleToolStripMenuItem.Name = "odaEkleToolStripMenuItem";
-            odaEkleToolStripMenuItem.Size = new Size(174, 26);
-            odaEkleToolStripMenuItem.Text = "Oda ekle";
+            odaEkleToolStripMenuItem.Size = new Size(224, 26);
+            odaEkleToolStripMenuItem.Text = "Oda Ekle";
             odaEkleToolStripMenuItem.Click += odaEkleToolStripMenuItem_Click;
             // 
             // odaDüzenleToolStripMenuItem
             // 
             odaDüzenleToolStripMenuItem.Name = "odaDüzenleToolStripMenuItem";
-            odaDüzenleToolStripMenuItem.Size = new Size(174, 26);
-            odaDüzenleToolStripMenuItem.Text = "oda düzenle";
+            odaDüzenleToolStripMenuItem.Size = new Size(224, 26);
+            odaDüzenleToolStripMenuItem.Text = "Oda Düzenle";
             odaDüzenleToolStripMenuItem.Click += odaDüzenleToolStripMenuItem_Click;
             // 
             // odaSilToolStripMenuItem
             // 
             odaSilToolStripMenuItem.Name = "odaSilToolStripMenuItem";
-            odaSilToolStripMenuItem.Size = new Size(174, 26);
-            odaSilToolStripMenuItem.Text = "oda sil";
+            odaSilToolStripMenuItem.Size = new Size(224, 26);
+            odaSilToolStripMenuItem.Text = "Oda Sil";
             odaSilToolStripMenuItem.Click += odaSilToolStripMenuItem_Click;
             // 
             // rezervasyonİşlemleriToolStripMenuItem
@@ -133,12 +134,25 @@
             btnAddReservation.UseVisualStyleBackColor = false;
             btnAddReservation.Click += button1_Click;
             // 
+            // btnCancelReservation
+            // 
+            btnCancelReservation.BackColor = Color.Red;
+            btnCancelReservation.ForeColor = SystemColors.ControlLightLight;
+            btnCancelReservation.Location = new Point(244, 69);
+            btnCancelReservation.Name = "btnCancelReservation";
+            btnCancelReservation.Size = new Size(172, 45);
+            btnCancelReservation.TabIndex = 3;
+            btnCancelReservation.Text = "Rezervasyon İptal Et";
+            btnCancelReservation.UseVisualStyleBackColor = false;
+            btnCancelReservation.Click += btnCancelReservation_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1186, 585);
+            Controls.Add(btnCancelReservation);
             Controls.Add(btnAddReservation);
             Controls.Add(dgvReservations);
             Controls.Add(menuStrip1);
@@ -165,5 +179,6 @@
         private DataGridView dgvReservations;
         private Button btnAddReservation;
         private ToolStripMenuItem rezervasyonlToolStripMenuItem;
+        private Button btnCancelReservation;
     }
 }

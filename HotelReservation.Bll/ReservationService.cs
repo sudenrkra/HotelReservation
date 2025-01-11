@@ -5,6 +5,8 @@ namespace HotelReservation.Bll
 {
     public class ReservationService
     {
+        private Database _database;
+
         private readonly ReservationDAL _reservationDAL;
         private readonly RoomDAL _roomDAL;
 
@@ -12,6 +14,7 @@ namespace HotelReservation.Bll
         {
             _reservationDAL = new ReservationDAL();
             _roomDAL = new RoomDAL();
+            _database = new Database();
         }
 
         public List<Reservation> GetAllReservations()
@@ -32,6 +35,10 @@ namespace HotelReservation.Bll
         {
             var reservations = _reservationDAL.GetReservationsByRoom(roomId); 
             return !reservations.Any(r => r.EntryDate < endDate && r.ReleaseDate > startDate);
+        }
+        public void CancelReservation(int reservationId) 
+        {
+            _database.CancelReservation(reservationId); 
         }
     }
 }
