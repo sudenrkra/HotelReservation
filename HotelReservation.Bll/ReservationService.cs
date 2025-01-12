@@ -9,12 +9,14 @@ namespace HotelReservation.Bll
 
         private readonly ReservationDAL _reservationDAL;
         private readonly RoomDAL _roomDAL;
+        private readonly BillService _billService;
 
         public ReservationService()
         {
             _reservationDAL = new ReservationDAL();
             _roomDAL = new RoomDAL();
             _database = new Database();
+            _billService = new BillService();
         }
 
         public List<Reservation> GetAllReservations()
@@ -26,7 +28,9 @@ namespace HotelReservation.Bll
         {
             if (IsRoomAvailable(reservation.RoomId, reservation.EntryDate, reservation.ReleaseDate))
             {
-                _reservationDAL.AddReservation(reservation);
+                int reservationId = _reservationDAL.AddReservation(reservation);
+                decimal totalPrice = _billService.CalculateTotalPrice(reservation); 
+                _billService.CreateBill(reservationId, totalPrice);
                 return true;
             }
             return false;
@@ -39,6 +43,10 @@ namespace HotelReservation.Bll
         public void CancelReservation(int reservationId) 
         {
             _database.CancelReservation(reservationId); 
+        }
+        public List<Reservation> GetReservationsWithBills()
+        {
+            return _reservationDAL.GetReservationsWithBills();
         }
     }
 }

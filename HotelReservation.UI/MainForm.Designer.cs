@@ -58,9 +58,10 @@
             // odaİşlemleriToolStripMenuItem
             // 
             odaİşlemleriToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { odaEkleToolStripMenuItem, odaDüzenleToolStripMenuItem, odaSilToolStripMenuItem });
+            odaİşlemleriToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
             odaİşlemleriToolStripMenuItem.Name = "odaİşlemleriToolStripMenuItem";
-            odaİşlemleriToolStripMenuItem.Size = new Size(115, 24);
-            odaİşlemleriToolStripMenuItem.Text = "Oda İşlemleri ";
+            odaİşlemleriToolStripMenuItem.Size = new Size(123, 24);
+            odaİşlemleriToolStripMenuItem.Text = "Oda İşlemleri ";
             // 
             // odaEkleToolStripMenuItem
             // 
@@ -87,8 +88,8 @@
             // 
             rezervasyonİşlemleriToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rezervasyonEkleToolStripMenuItem, rezervasyonSilToolStripMenuItem, rezervasyonlToolStripMenuItem });
             rezervasyonİşlemleriToolStripMenuItem.Name = "rezervasyonİşlemleriToolStripMenuItem";
-            rezervasyonİşlemleriToolStripMenuItem.Size = new Size(165, 24);
-            rezervasyonİşlemleriToolStripMenuItem.Text = "Rezervasyon İşlemleri";
+            rezervasyonİşlemleriToolStripMenuItem.Size = new Size(177, 24);
+            rezervasyonİşlemleriToolStripMenuItem.Text = "Rezervasyon İşlemleri ";
             // 
             // rezervasyonEkleToolStripMenuItem
             // 

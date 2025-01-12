@@ -13,7 +13,7 @@ namespace HotelReservation.Dal
             using (var connection = db.GetConnection())
             {
                 connection.Open();
-                string query = "INSERT INTO Bills(TotalPrice,BillDate,ReservationId,CustomerId) VALUES (@TotalPrice,@BillDate,@ReservationId,@CustomerId)";
+                string query = "INSERT INTO Bills(TotalPrice,BillDate,ReservationId) VALUES (@TotalPrice,@BillDate,@ReservationId)";
                 using (var cmd = new MySqlCommand(query, connection))
                 {
                     cmd.Parameters.AddWithValue("@BillDate", bill.BillDate);
@@ -40,9 +40,9 @@ namespace HotelReservation.Dal
                         if (reader.Read())
                         {
                             bill = new Bill();
-                            bill.BillDate=reader.GetDateTime("@BillDate");
+                            bill.BillDate = reader.GetDateTime("@BillDate");
                             bill.TotalPrice = reader.GetDecimal("@TotalPrice");
-                            bill.ReservationId=reader.GetInt32("@ReservationId");
+                            bill.ReservationId = reader.GetInt32("@ReservationId");
                         }
                     }
                 }
@@ -55,7 +55,7 @@ namespace HotelReservation.Dal
             using (var connection = db.GetConnection())
             {
                 connection.Open();
-                string query = "UPDATE Bills SET BillDate=@BillDate,TotalPrice=@TotalPrice,ReservationId=@ReservationId,CustomerId=@CustomerId";
+                string query = "UPDATE Bills SET BillDate=@BillDate,TotalPrice=@TotalPrice,ReservationId=@ReservationId";
                 using (var cmd = new MySqlCommand(query, connection))
                 {
                     cmd.Parameters.AddWithValue("@BillDate", bill.BillDate);
@@ -80,5 +80,60 @@ namespace HotelReservation.Dal
                 }
             }
         }
+        public Bill GetBillByReservationId(int reservationId)
+        {
+            Bill bill = null;
+            using (var connection = db.GetConnection())
+            {
+                connection.Open();
+                string query = "SELECT * FROM Bills WHERE ReservationId = @ReservationId";
+                using (var cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@ReservationId", reservationId);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            bill = new Bill
+                            {
+                                BillId = reader.GetInt32("BillId"),
+                                ReservationId = reader.GetInt32("ReservationId"),
+                                TotalPrice = reader.GetDecimal("TotalPrice"),
+                                BillDate = reader.GetDateTime("BillDate")
+                            };
+                        }
+                    }
+                }
+            }
+            return bill;
+        }
+                    public List<Bill> GetBills()
+        {
+            List<Bill> bills = new List<Bill>(); using (var connection = db.GetConnection())
+            {
+                connection.Open();
+                string query = "SELECT * FROM Bills";
+                using (var cmd = new MySqlCommand(query, connection))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Bill bill = new Bill
+                            {
+                                BillId = reader.GetInt32("BillId"),
+                                ReservationId = reader.GetInt32("ReservationId"),
+                                TotalPrice = reader.GetDecimal("TotalPrice"),
+                                BillDate = reader.GetDateTime("BillDate"),
+                            };
+                            bills.Add(bill);
+                        }
+                    }
+                }
+            }
+            return bills;
+        }
     }
 }
+                            
+

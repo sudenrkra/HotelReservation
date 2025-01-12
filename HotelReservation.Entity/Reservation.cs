@@ -12,6 +12,7 @@ namespace HotelReservation.Entity
         public string? CustomerSurname { get; set; }
         public char Phone { get; set; }
         public bool ReservationStatus { get; set; }
+        public Bill Bill { get; set; }
 
     }
 }
