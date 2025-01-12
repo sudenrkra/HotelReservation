@@ -48,12 +48,12 @@
             // 
             // dgvRooms
             // 
-            dgvRooms.BackgroundColor = SystemColors.Control;
+            dgvRooms.BackgroundColor = SystemColors.ButtonFace;
             dgvRooms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRooms.Location = new Point(44, 561);
             dgvRooms.Name = "dgvRooms";
             dgvRooms.RowHeadersWidth = 51;
-            dgvRooms.Size = new Size(710, 138);
+            dgvRooms.Size = new Size(757, 138);
             dgvRooms.TabIndex = 0;
             dgvRooms.SelectionChanged += dgvRooms_SelectionChanged;
             // 
@@ -70,6 +70,7 @@
             // 
             // txtRoomType
             // 
+            txtRoomType.BackColor = SystemColors.ButtonFace;
             txtRoomType.Location = new Point(145, 94);
             txtRoomType.Name = "txtRoomType";
             txtRoomType.Size = new Size(150, 27);
@@ -77,6 +78,7 @@
             // 
             // txtPrice
             // 
+            txtPrice.BackColor = SystemColors.ButtonFace;
             txtPrice.Location = new Point(145, 192);
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(150, 27);
@@ -84,6 +86,7 @@
             // 
             // txtCapacity
             // 
+            txtCapacity.BackColor = SystemColors.ButtonFace;
             txtCapacity.Location = new Point(145, 277);
             txtCapacity.Name = "txtCapacity";
             txtCapacity.Size = new Size(150, 27);
@@ -134,7 +137,7 @@
             // btnUpdateRoom
             // 
             btnUpdateRoom.BackColor = Color.LightSkyBlue;
-            btnUpdateRoom.Location = new Point(317, 514);
+            btnUpdateRoom.Location = new Point(343, 514);
             btnUpdateRoom.Name = "btnUpdateRoom";
             btnUpdateRoom.Size = new Size(164, 29);
             btnUpdateRoom.TabIndex = 9;
@@ -145,7 +148,7 @@
             // btnDeleteRoom
             // 
             btnDeleteRoom.BackColor = Color.Red;
-            btnDeleteRoom.Location = new Point(576, 514);
+            btnDeleteRoom.Location = new Point(623, 514);
             btnDeleteRoom.Name = "btnDeleteRoom";
             btnDeleteRoom.Size = new Size(178, 29);
             btnDeleteRoom.TabIndex = 10;
@@ -155,7 +158,8 @@
             // 
             // picRoom
             // 
-            picRoom.Location = new Point(359, 40);
+            picRoom.BackColor = SystemColors.ButtonFace;
+            picRoom.Location = new Point(408, 32);
             picRoom.Name = "picRoom";
             picRoom.Size = new Size(660, 444);
             picRoom.TabIndex = 11;
@@ -176,8 +180,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Silver;
-            ClientSize = new Size(1031, 727);
+            BackColor = SystemColors.ControlLightLight;
+            ClientSize = new Size(1187, 727);
             Controls.Add(pictureBox1);
             Controls.Add(picRoom);
             Controls.Add(btnDeleteRoom);

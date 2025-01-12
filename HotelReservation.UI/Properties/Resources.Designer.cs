@@ -69,5 +69,25 @@ namespace HotelReservation.UI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fa3e37269e3920b432b2c17aa0edf2cb {
+            get {
+                object obj = ResourceManager.GetObject("fa3e37269e3920b432b2c17aa0edf2cb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fa3e37269e3920b432b2c17aa0edf2cb1 {
+            get {
+                object obj = ResourceManager.GetObject("fa3e37269e3920b432b2c17aa0edf2cb1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
