@@ -93,5 +93,10 @@ namespace HotelReservation.UI
                 MessageBox.Show("Lütfen iptal etmek için bir rezervasyon seçin.");
             }
         }
+
+        private void dgvReservations_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

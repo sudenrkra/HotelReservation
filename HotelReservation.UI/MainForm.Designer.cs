@@ -66,21 +66,21 @@
             // odaEkleToolStripMenuItem
             // 
             odaEkleToolStripMenuItem.Name = "odaEkleToolStripMenuItem";
-            odaEkleToolStripMenuItem.Size = new Size(224, 26);
+            odaEkleToolStripMenuItem.Size = new Size(178, 26);
             odaEkleToolStripMenuItem.Text = "Oda Ekle";
             odaEkleToolStripMenuItem.Click += odaEkleToolStripMenuItem_Click;
             // 
             // odaDüzenleToolStripMenuItem
             // 
             odaDüzenleToolStripMenuItem.Name = "odaDüzenleToolStripMenuItem";
-            odaDüzenleToolStripMenuItem.Size = new Size(224, 26);
+            odaDüzenleToolStripMenuItem.Size = new Size(178, 26);
             odaDüzenleToolStripMenuItem.Text = "Oda Düzenle";
             odaDüzenleToolStripMenuItem.Click += odaDüzenleToolStripMenuItem_Click;
             // 
             // odaSilToolStripMenuItem
             // 
             odaSilToolStripMenuItem.Name = "odaSilToolStripMenuItem";
-            odaSilToolStripMenuItem.Size = new Size(224, 26);
+            odaSilToolStripMenuItem.Size = new Size(178, 26);
             odaSilToolStripMenuItem.Text = "Oda Sil";
             odaSilToolStripMenuItem.Click += odaSilToolStripMenuItem_Click;
             // 
@@ -120,6 +120,7 @@
             dgvReservations.RowHeadersWidth = 51;
             dgvReservations.Size = new Size(1136, 403);
             dgvReservations.TabIndex = 1;
+            dgvReservations.CellContentClick += dgvReservations_CellContentClick;
             // 
             // btnAddReservation
             // 
