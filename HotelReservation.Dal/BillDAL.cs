@@ -109,7 +109,8 @@ namespace HotelReservation.Dal
         }
                     public List<Bill> GetBills()
         {
-            List<Bill> bills = new List<Bill>(); using (var connection = db.GetConnection())
+            List<Bill> bills = new List<Bill>();
+            using (var connection = db.GetConnection())
             {
                 connection.Open();
                 string query = "SELECT * FROM Bills";
