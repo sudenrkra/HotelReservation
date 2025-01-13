@@ -75,7 +75,24 @@ namespace HotelReservation.UI
         {
             ReservationService reservationService = new ReservationService();
             List<Reservation> reservations = reservationService.GetAllReservations();
+            dgvReservations.DataSource = null;
             dgvReservations.DataSource = reservations;
+        }
+
+        private void ShowBillDetails(int reservationId)
+        {
+            ReservationService reservationService = new ReservationService();
+            Bill bill = reservationService.GetBillByReservationId(reservationId);
+
+            if (bill != null && bill.BillId != 0)
+            {
+                string billDetails = $"Fatura ID: {bill.BillId}\nToplam Fiyat: {bill.TotalPrice:C}\nFatura Tarihi: {bill.BillDate}";
+                MessageBox.Show(billDetails, "Fatura Detayları");
+            }
+            else
+            {
+                MessageBox.Show("Bu rezervasyon için fatura bulunamadı.", "Fatura Detayları");
+            }
         }
 
         private void btnCancelReservation_Click(object sender, EventArgs e)
@@ -96,7 +113,43 @@ namespace HotelReservation.UI
 
         private void dgvReservations_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == dgvReservations.Columns["BillDetailsColumn"].Index)
+            {
+                int reservationId = Convert.ToInt32(dgvReservations.Rows[e.RowIndex].Cells["ReservationId"].Value);
+                ShowBillDetails(reservationId);
+            }
+            else if (e.ColumnIndex == dgvReservations.Columns["DownloadBillColumn"].Index)
+            {
+                int reservationId = Convert.ToInt32(dgvReservations.Rows[e.RowIndex].Cells["ReservationId"].Value);
+                DownloadBill(reservationId);
+            }
+        }
+        private void DownloadBill(int reservationId)
+        {
+            ReservationService reservationService = new ReservationService();
+            Bill bill = reservationService.GetBillByReservationId(reservationId);
+            if (bill != null && bill.BillId != 0)
+            {
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+                    saveFileDialog.Filter = "PDF dosyası|*.pdf";
+                    saveFileDialog.Title = "Faturayı Kaydet";
+                    saveFileDialog.FileName = $"Fatura_{bill.BillId}.pdf";
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string filePath = saveFileDialog.FileName;
 
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bu rezervasyon için fatura bulunamadı.", "Fatura İndir");
+            }
         }
     }
 }
+                   
+
+    
+

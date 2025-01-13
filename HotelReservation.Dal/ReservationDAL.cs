@@ -90,6 +90,14 @@ namespace HotelReservation.Dal
             using (var connection = db.GetConnection())
             {
                 connection.Open();
+
+                string deleteBillQuery = "DELETE FROM Bill WHERE ReservationId = @ReservationId";
+                using (var cmd = new MySqlCommand(deleteBillQuery, connection))
+                {
+                    cmd.Parameters.AddWithValue("@ReservationId", reservationId);
+                    cmd.ExecuteNonQuery();
+                }
+
                 string query = "DELETE FROM Reservations WHERE ReservationId = @ReservationId";
                 using (var cmd = new MySqlCommand(query, connection))
                 {

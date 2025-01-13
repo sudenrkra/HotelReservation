@@ -40,6 +40,8 @@
             dgvReservations = new DataGridView();
             btnAddReservation = new Button();
             btnCancelReservation = new Button();
+            DownloadBillColumn = new DataGridViewButtonColumn();
+            BillDetailsColumn = new DataGridViewButtonColumn();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvReservations).BeginInit();
             SuspendLayout();
@@ -115,6 +117,7 @@
             // 
             dgvReservations.BackgroundColor = SystemColors.ButtonFace;
             dgvReservations.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvReservations.Columns.AddRange(new DataGridViewColumn[] { DownloadBillColumn, BillDetailsColumn });
             dgvReservations.Location = new Point(25, 152);
             dgvReservations.Name = "dgvReservations";
             dgvReservations.RowHeadersWidth = 51;
@@ -147,6 +150,24 @@
             btnCancelReservation.Text = "Rezervasyon İptal Et";
             btnCancelReservation.UseVisualStyleBackColor = false;
             btnCancelReservation.Click += btnCancelReservation_Click;
+            // 
+            // DownloadBillColumn
+            // 
+            DownloadBillColumn.HeaderText = "Fatura İndir";
+            DownloadBillColumn.MinimumWidth = 6;
+            DownloadBillColumn.Name = "DownloadBillColumn";
+            DownloadBillColumn.Text = "İndir";
+            DownloadBillColumn.UseColumnTextForButtonValue = true;
+            DownloadBillColumn.Width = 125;
+            // 
+            // BillDetailsColumn
+            // 
+            BillDetailsColumn.HeaderText = "Fatura Detayları";
+            BillDetailsColumn.MinimumWidth = 6;
+            BillDetailsColumn.Name = "BillDetailsColumn";
+            BillDetailsColumn.Text = "Detaylar";
+            BillDetailsColumn.UseColumnTextForButtonValue = true;
+            BillDetailsColumn.Width = 125;
             // 
             // MainForm
             // 
@@ -183,5 +204,7 @@
         private Button btnAddReservation;
         private ToolStripMenuItem rezervasyonlToolStripMenuItem;
         private Button btnCancelReservation;
+        private DataGridViewButtonColumn DownloadBillColumn;
+        private DataGridViewButtonColumn BillDetailsColumn;
     }
 }

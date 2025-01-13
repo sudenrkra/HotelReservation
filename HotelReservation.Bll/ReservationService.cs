@@ -23,6 +23,11 @@ namespace HotelReservation.Bll
         {
             return _reservationDAL.GetAllReservations();
         }
+        public Bill GetBillByReservationId(int reservationId) 
+        {
+            BillService billService = new BillService(); 
+            return billService.GetBillByReservationId(reservationId); 
+        }
 
         public bool MakeReservation(Reservation reservation)
         {

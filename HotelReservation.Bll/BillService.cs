@@ -15,7 +15,9 @@ namespace HotelReservation.Bll
         {
             Bill bill = new Bill
             {
-                ReservationId = reservationId, TotalPrice = totalPrice, BillDate = DateTime.Now 
+                ReservationId = reservationId,
+                TotalPrice = totalPrice,
+                BillDate = DateTime.Now 
             };
             _billDAL.AddBill(bill);
         }
