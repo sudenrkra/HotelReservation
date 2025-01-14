@@ -89,7 +89,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightSlateGray;
+            BackColor = Color.LightSteelBlue;
             ClientSize = new Size(482, 499);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
