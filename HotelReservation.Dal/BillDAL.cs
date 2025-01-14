@@ -99,7 +99,7 @@ namespace HotelReservation.Dal
                                 BillId = reader.GetInt32("BillId"),
                                 ReservationId = reader.GetInt32("ReservationId"),
                                 TotalPrice = reader.GetDecimal("TotalPrice"),
-                                BillDate = reader.GetDateTime("BillDate")
+                                BillDate = reader.GetDateTime("BillDate"),
                             };
                         }
                     }
@@ -107,7 +107,8 @@ namespace HotelReservation.Dal
             }
             return bill;
         }
-                    public List<Bill> GetBills()
+
+    public List<Bill> GetBills()
         {
             List<Bill> bills = new List<Bill>();
             using (var connection = db.GetConnection())

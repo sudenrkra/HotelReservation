@@ -7,6 +7,6 @@ namespace HotelReservation.Entity
         public int ReservationId { get; set; }
         public decimal TotalPrice { get; set; }
         public DateTime BillDate { get; set; }
-        public Reservation Reservation { get; set; }
+        public Reservation? Reservation { get; set; }
     }
 }
