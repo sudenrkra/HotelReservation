@@ -41,6 +41,8 @@
             txtRoomId = new TextBox();
             label6 = new Label();
             txtPhone = new TextBox();
+            label7 = new Label();
+            txtBillId = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -92,28 +94,28 @@
             // 
             dtpEntryDate.Location = new Point(183, 185);
             dtpEntryDate.Name = "dtpEntryDate";
-            dtpEntryDate.Size = new Size(196, 27);
+            dtpEntryDate.Size = new Size(209, 27);
             dtpEntryDate.TabIndex = 5;
             // 
             // dtpReleaseDate
             // 
             dtpReleaseDate.Location = new Point(183, 255);
             dtpReleaseDate.Name = "dtpReleaseDate";
-            dtpReleaseDate.Size = new Size(196, 27);
+            dtpReleaseDate.Size = new Size(209, 27);
             dtpReleaseDate.TabIndex = 6;
             // 
             // txtCustomerName
             // 
             txtCustomerName.Location = new Point(183, 65);
             txtCustomerName.Name = "txtCustomerName";
-            txtCustomerName.Size = new Size(196, 27);
+            txtCustomerName.Size = new Size(209, 27);
             txtCustomerName.TabIndex = 9;
             // 
             // txtCustomerSurname
             // 
             txtCustomerSurname.Location = new Point(183, 126);
             txtCustomerSurname.Name = "txtCustomerSurname";
-            txtCustomerSurname.Size = new Size(196, 27);
+            txtCustomerSurname.Size = new Size(209, 27);
             txtCustomerSurname.TabIndex = 10;
             // 
             // btnSave
@@ -140,9 +142,9 @@
             label6.AutoSize = true;
             label6.Location = new Point(49, 384);
             label6.Name = "label6";
-            label6.Size = new Size(53, 20);
+            label6.Size = new Size(128, 20);
             label6.TabIndex = 13;
-            label6.Text = "Phone:";
+            label6.Text = "Telefon Numarası:";
             // 
             // txtPhone
             // 
@@ -151,11 +153,30 @@
             txtPhone.Size = new Size(90, 27);
             txtPhone.TabIndex = 14;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(49, 437);
+            label7.Name = "label7";
+            label7.Size = new Size(69, 20);
+            label7.TabIndex = 15;
+            label7.Text = "Fatura Id:";
+            label7.Click += label7_Click;
+            // 
+            // txtBillId
+            // 
+            txtBillId.Location = new Point(183, 434);
+            txtBillId.Name = "txtBillId";
+            txtBillId.Size = new Size(90, 27);
+            txtBillId.TabIndex = 16;
+            // 
             // AddReservationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(509, 608);
+            Controls.Add(txtBillId);
+            Controls.Add(label7);
             Controls.Add(txtPhone);
             Controls.Add(label6);
             Controls.Add(txtRoomId);
@@ -191,5 +212,7 @@
         private TextBox txtRoomId;
         private Label label6;
         private TextBox txtPhone;
+        private Label label7;
+        private TextBox txtBillId;
     }
 }

@@ -21,9 +21,9 @@ namespace HotelReservation.UI
             DateTime releaseDate = dtpReleaseDate.Value;
 
             if (entryDate >= releaseDate)
-            { 
-                MessageBox.Show("Başlangıç tarihi, bitiş tarihinden sonra olamaz."); 
-                return; 
+            {
+                MessageBox.Show("Başlangıç tarihi, bitiş tarihinden sonra olamaz.");
+                return;
             }
 
             Reservation newReservation = new Reservation
@@ -53,6 +53,11 @@ namespace HotelReservation.UI
         }
 
         private void AddReservationForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

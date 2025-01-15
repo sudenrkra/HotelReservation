@@ -36,6 +36,7 @@ namespace HotelReservation.Bll
                 int reservationId = _reservationDAL.AddReservation(reservation);
                 decimal totalPrice = _billService.CalculateTotalPrice(reservation); 
                 _billService.CreateBill(reservationId, totalPrice);
+                Console.WriteLine("Reservation ID: " + reservationId + " - Total Price: " + totalPrice);
                 return true;
             }
             return false;
