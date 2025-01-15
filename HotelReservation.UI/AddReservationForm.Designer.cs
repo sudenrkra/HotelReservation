@@ -174,6 +174,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSlateGray;
             ClientSize = new Size(509, 608);
             Controls.Add(txtBillId);
             Controls.Add(label7);
@@ -191,7 +192,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "AddReservationForm";
-            Text = "AddReservationForm";
+            Text = "Rezervasyon İşlemleri";
             Load += AddReservationForm_Load;
             ResumeLayout(false);
             PerformLayout();

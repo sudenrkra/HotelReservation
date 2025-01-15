@@ -41,6 +41,7 @@
             btnDeleteRoom = new Button();
             picRoom = new PictureBox();
             pictureBox1 = new PictureBox();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvRooms).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picRoom).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -95,31 +96,31 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(32, 96);
             label1.Name = "label1";
-            label1.Size = new Size(91, 25);
+            label1.Size = new Size(88, 25);
             label1.TabIndex = 5;
             label1.Text = "Oda Tipi :";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label2.Location = new Point(32, 191);
             label2.Name = "label2";
-            label2.Size = new Size(60, 25);
+            label2.Size = new Size(58, 25);
             label2.TabIndex = 6;
             label2.Text = "Fiyat :";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label3.Location = new Point(32, 276);
             label3.Name = "label3";
-            label3.Size = new Size(91, 25);
+            label3.Size = new Size(87, 25);
             label3.TabIndex = 7;
             label3.Text = "Kapasite :";
             // 
@@ -161,27 +162,38 @@
             picRoom.BackColor = SystemColors.ButtonFace;
             picRoom.Location = new Point(408, 32);
             picRoom.Name = "picRoom";
-            picRoom.Size = new Size(660, 444);
+            picRoom.Size = new Size(660, 433);
             picRoom.TabIndex = 11;
             picRoom.TabStop = false;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.back_button;
-            pictureBox1.Location = new Point(44, 22);
+            pictureBox1.Location = new Point(32, 22);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(48, 46);
+            pictureBox1.Size = new Size(38, 32);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label4.Location = new Point(76, 23);
+            label4.Name = "label4";
+            label4.Size = new Size(57, 31);
+            label4.TabIndex = 13;
+            label4.Text = "Geri";
+            // 
             // RoomForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLightLight;
+            BackColor = Color.LightSlateGray;
             ClientSize = new Size(1187, 727);
+            Controls.Add(label4);
             Controls.Add(pictureBox1);
             Controls.Add(picRoom);
             Controls.Add(btnDeleteRoom);
@@ -196,7 +208,7 @@
             Controls.Add(btnAddRoom);
             Controls.Add(dgvRooms);
             Name = "RoomForm";
-            Text = "AddRoomForm";
+            Text = "Oda İşlemleri";
             Load += RoomForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvRooms).EndInit();
             ((System.ComponentModel.ISupportInitialize)picRoom).EndInit();
@@ -220,5 +232,6 @@
         private Button btnDeleteRoom;
         private PictureBox picRoom;
         private PictureBox pictureBox1;
+        private Label label4;
     }
 }

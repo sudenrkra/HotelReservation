@@ -38,10 +38,10 @@
             rezervasyonSilToolStripMenuItem = new ToolStripMenuItem();
             rezervasyonlToolStripMenuItem = new ToolStripMenuItem();
             dgvReservations = new DataGridView();
-            btnAddReservation = new Button();
-            btnCancelReservation = new Button();
             DownloadBillColumn = new DataGridViewButtonColumn();
             BillDetailsColumn = new DataGridViewButtonColumn();
+            btnAddReservation = new Button();
+            btnCancelReservation = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvReservations).BeginInit();
             SuspendLayout();
@@ -125,6 +125,24 @@
             dgvReservations.TabIndex = 1;
             dgvReservations.CellContentClick += dgvReservations_CellContentClick;
             // 
+            // DownloadBillColumn
+            // 
+            DownloadBillColumn.HeaderText = "Fatura İndir";
+            DownloadBillColumn.MinimumWidth = 6;
+            DownloadBillColumn.Name = "DownloadBillColumn";
+            DownloadBillColumn.Text = "İndir";
+            DownloadBillColumn.UseColumnTextForButtonValue = true;
+            DownloadBillColumn.Width = 125;
+            // 
+            // BillDetailsColumn
+            // 
+            BillDetailsColumn.HeaderText = "Fatura Detayları";
+            BillDetailsColumn.MinimumWidth = 6;
+            BillDetailsColumn.Name = "BillDetailsColumn";
+            BillDetailsColumn.Text = "Detaylar";
+            BillDetailsColumn.UseColumnTextForButtonValue = true;
+            BillDetailsColumn.Width = 125;
+            // 
             // btnAddReservation
             // 
             btnAddReservation.BackColor = Color.LimeGreen;
@@ -151,29 +169,11 @@
             btnCancelReservation.UseVisualStyleBackColor = false;
             btnCancelReservation.Click += btnCancelReservation_Click;
             // 
-            // DownloadBillColumn
-            // 
-            DownloadBillColumn.HeaderText = "Fatura İndir";
-            DownloadBillColumn.MinimumWidth = 6;
-            DownloadBillColumn.Name = "DownloadBillColumn";
-            DownloadBillColumn.Text = "İndir";
-            DownloadBillColumn.UseColumnTextForButtonValue = true;
-            DownloadBillColumn.Width = 125;
-            // 
-            // BillDetailsColumn
-            // 
-            BillDetailsColumn.HeaderText = "Fatura Detayları";
-            BillDetailsColumn.MinimumWidth = 6;
-            BillDetailsColumn.Name = "BillDetailsColumn";
-            BillDetailsColumn.Text = "Detaylar";
-            BillDetailsColumn.UseColumnTextForButtonValue = true;
-            BillDetailsColumn.Width = 125;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Window;
+            BackColor = SystemColors.HighlightText;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1186, 585);
             Controls.Add(btnCancelReservation);
@@ -181,7 +181,7 @@
             Controls.Add(dgvReservations);
             Controls.Add(menuStrip1);
             Name = "MainForm";
-            Text = "ssss";
+            Text = "Ana Menü";
             Load += MainForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

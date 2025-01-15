@@ -40,11 +40,11 @@
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             lblUsername.ForeColor = SystemColors.ControlLightLight;
-            lblUsername.Location = new Point(92, 127);
+            lblUsername.Location = new Point(82, 127);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(108, 28);
+            lblUsername.Size = new Size(129, 28);
             lblUsername.TabIndex = 0;
-            lblUsername.Text = "Username :";
+            lblUsername.Text = "Kullanıcı Adı :";
             lblUsername.TextAlign = ContentAlignment.TopCenter;
             // 
             // lblPassword
@@ -52,11 +52,11 @@
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             lblPassword.ForeColor = SystemColors.ControlLightLight;
-            lblPassword.Location = new Point(92, 219);
+            lblPassword.Location = new Point(113, 219);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(102, 28);
+            lblPassword.Size = new Size(60, 28);
             lblPassword.TabIndex = 1;
-            lblPassword.Text = "Password :";
+            lblPassword.Text = "Şifre :";
             // 
             // txtUsername
             // 
@@ -89,7 +89,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightSteelBlue;
+            BackColor = Color.LightSlateGray;
             ClientSize = new Size(482, 499);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
@@ -97,7 +97,7 @@
             Controls.Add(lblPassword);
             Controls.Add(lblUsername);
             Name = "LoginForm";
-            Text = "Form1";
+            Text = "Kullanıcı Girişi";
             Load += LoginForm_Load;
             ResumeLayout(false);
             PerformLayout();
