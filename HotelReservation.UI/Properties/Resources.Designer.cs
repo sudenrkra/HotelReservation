@@ -71,22 +71,22 @@ namespace HotelReservation.UI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static System.Drawing.Bitmap fa3e37269e3920b432b2c17aa0edf2cb {
+        internal static byte[] eye {
             get {
-                object obj = ResourceManager.GetObject("fa3e37269e3920b432b2c17aa0edf2cb", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("eye", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static System.Drawing.Bitmap fa3e37269e3920b432b2c17aa0edf2cb1 {
+        internal static byte[] eye_closed_icon {
             get {
-                object obj = ResourceManager.GetObject("fa3e37269e3920b432b2c17aa0edf2cb1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("eye_closed_icon", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }
