@@ -18,6 +18,7 @@ namespace HotelReservation.UI
         private void MainForm_Load(object sender, EventArgs e)
         {
             UpdateReservationGrid();
+            SetColumnHeaders();
         }
 
 
@@ -75,8 +76,39 @@ namespace HotelReservation.UI
         {
             ReservationService reservationService = new ReservationService();
             List<Reservation> reservations = reservationService.GetAllReservations();
+            dgvReservations.AutoGenerateColumns = true;
             dgvReservations.DataSource = null;
             dgvReservations.DataSource = reservations;
+            SetColumnHeaders();
+        }
+        private void SetColumnHeaders()
+        {
+            if (dgvReservations.Columns["ReservationId"] != null)
+                dgvReservations.Columns["ReservationId"].HeaderText = "Rezervasyon ID";
+
+            if (dgvReservations.Columns["CustomerName"] != null)
+                dgvReservations.Columns["CustomerName"].HeaderText = "Müşteri Adı";
+
+            if (dgvReservations.Columns["EntryDate"] != null)
+                dgvReservations.Columns["EntryDate"].HeaderText = "Giriş Tarihi";
+
+            if (dgvReservations.Columns["ReleaseDate"] != null)
+                dgvReservations.Columns["ReleaseDate"].HeaderText = "Çıkış Tarihi";
+
+            if (dgvReservations.Columns["RoomId"] != null)
+                dgvReservations.Columns["RoomId"].HeaderText = "Oda Numarası";
+
+            if (dgvReservations.Columns["CustomerSurname"] != null)
+                dgvReservations.Columns["CustomerSurname"].HeaderText = "Müşteri Soyadı";
+
+            if (dgvReservations.Columns["Phone"] != null)
+                dgvReservations.Columns["Phone"].HeaderText = "Telefon";
+
+            if (dgvReservations.Columns["BillId"] != null)
+                dgvReservations.Columns["BillId"].HeaderText = "Fatura ID";
+
+            if (dgvReservations.Columns["ReservationStatus"] != null)
+                dgvReservations.Columns["ReservationStatus"].HeaderText = "Rezervasyon Durumu";
         }
 
         private void ShowBillDetails(int reservationId)
@@ -147,8 +179,13 @@ namespace HotelReservation.UI
                 MessageBox.Show("Bu rezervasyon için fatura bulunamadı.", "Fatura İndir");
             }
         }
+        private void dgvReservations_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            SetColumnHeaders();
+        }
     }
 }
+
                    
 
     
