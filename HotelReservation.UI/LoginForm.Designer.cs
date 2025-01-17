@@ -40,7 +40,7 @@
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             lblUsername.ForeColor = SystemColors.ControlLightLight;
-            lblUsername.Location = new Point(82, 127);
+            lblUsername.Location = new Point(104, 204);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(129, 28);
             lblUsername.TabIndex = 0;
@@ -52,7 +52,7 @@
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             lblPassword.ForeColor = SystemColors.ControlLightLight;
-            lblPassword.Location = new Point(113, 219);
+            lblPassword.Location = new Point(132, 294);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(60, 28);
             lblPassword.TabIndex = 1;
@@ -60,14 +60,14 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(228, 131);
+            txtUsername.Location = new Point(269, 208);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(163, 27);
             txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(228, 223);
+            txtPassword.Location = new Point(269, 294);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(163, 27);
             txtPassword.TabIndex = 3;
@@ -77,7 +77,7 @@
             btnLogin.BackColor = Color.SpringGreen;
             btnLogin.Cursor = Cursors.AppStarting;
             btnLogin.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            btnLogin.Location = new Point(159, 321);
+            btnLogin.Location = new Point(244, 378);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(163, 44);
             btnLogin.TabIndex = 4;
@@ -90,7 +90,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
-            ClientSize = new Size(482, 499);
+            ClientSize = new Size(591, 519);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
