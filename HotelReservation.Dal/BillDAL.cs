@@ -16,11 +16,9 @@ namespace HotelReservation.Dal
                 string query = "INSERT INTO Bills(TotalPrice,BillDate,ReservationId) VALUES (@TotalPrice,@BillDate,@ReservationId)";
                 using (var cmd = new MySqlCommand(query, connection))
                 {
-                    cmd.Parameters.AddWithValue("@BillDate", bill.BillDate);
-                    cmd.Parameters.AddWithValue("@TotalPrice", bill.TotalPrice);
-                    cmd.Parameters.AddWithValue("@ReservationId", bill.ReservationId);
-                    cmd.ExecuteNonQuery();
-
+                    cmd.Parameters.Add("@TotalPrice", MySqlDbType.Decimal).Value = bill.TotalPrice;
+                    cmd.Parameters.Add("@BillDate", MySqlDbType.DateTime).Value = bill.BillDate;
+                    cmd.Parameters.Add("@ReservationId", MySqlDbType.Int32).Value = bill.ReservationId;
                 }
             }
         }

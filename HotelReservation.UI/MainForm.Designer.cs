@@ -173,7 +173,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.HighlightText;
+            BackColor = Color.SlateGray;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1186, 585);
             Controls.Add(btnCancelReservation);

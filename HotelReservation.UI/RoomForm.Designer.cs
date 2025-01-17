@@ -61,9 +61,9 @@
             // btnAddRoom
             // 
             btnAddRoom.BackColor = Color.LimeGreen;
-            btnAddRoom.Location = new Point(44, 514);
+            btnAddRoom.Location = new Point(44, 500);
             btnAddRoom.Name = "btnAddRoom";
-            btnAddRoom.Size = new Size(169, 29);
+            btnAddRoom.Size = new Size(169, 43);
             btnAddRoom.TabIndex = 1;
             btnAddRoom.Text = "Oda Ekle";
             btnAddRoom.UseVisualStyleBackColor = false;
@@ -138,9 +138,9 @@
             // btnUpdateRoom
             // 
             btnUpdateRoom.BackColor = Color.LightSkyBlue;
-            btnUpdateRoom.Location = new Point(343, 514);
+            btnUpdateRoom.Location = new Point(343, 500);
             btnUpdateRoom.Name = "btnUpdateRoom";
-            btnUpdateRoom.Size = new Size(164, 29);
+            btnUpdateRoom.Size = new Size(164, 43);
             btnUpdateRoom.TabIndex = 9;
             btnUpdateRoom.Text = "Oda Düzenle";
             btnUpdateRoom.UseVisualStyleBackColor = false;
@@ -149,9 +149,10 @@
             // btnDeleteRoom
             // 
             btnDeleteRoom.BackColor = Color.Red;
-            btnDeleteRoom.Location = new Point(623, 514);
+            btnDeleteRoom.Font = new Font("Segoe UI", 9F);
+            btnDeleteRoom.Location = new Point(637, 500);
             btnDeleteRoom.Name = "btnDeleteRoom";
-            btnDeleteRoom.Size = new Size(178, 29);
+            btnDeleteRoom.Size = new Size(164, 46);
             btnDeleteRoom.TabIndex = 10;
             btnDeleteRoom.Text = "Oda Sil";
             btnDeleteRoom.UseVisualStyleBackColor = false;
@@ -191,7 +192,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightSlateGray;
+            BackColor = Color.SlateGray;
             ClientSize = new Size(1187, 727);
             Controls.Add(label4);
             Controls.Add(pictureBox1);

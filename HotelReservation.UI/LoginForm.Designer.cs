@@ -41,7 +41,7 @@
             // 
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            lblUsername.ForeColor = SystemColors.ControlLightLight;
+            lblUsername.ForeColor = SystemColors.ActiveCaptionText;
             lblUsername.Location = new Point(48, 266);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(129, 28);
@@ -53,7 +53,7 @@
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            lblPassword.ForeColor = SystemColors.ControlLightLight;
+            lblPassword.ForeColor = SystemColors.ActiveCaptionText;
             lblPassword.Location = new Point(76, 356);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(60, 28);
@@ -101,7 +101,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightSlateGray;
+            BackColor = Color.SlateGray;
             ClientSize = new Size(457, 549);
             Controls.Add(pictureBox1);
             Controls.Add(btnLogin);
