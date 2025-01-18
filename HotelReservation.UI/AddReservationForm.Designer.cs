@@ -174,7 +174,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SlateGray;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(509, 608);
             Controls.Add(txtBillId);
             Controls.Add(label7);
