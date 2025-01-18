@@ -1,6 +1,8 @@
 ﻿
 using HotelReservation.Bll;
+using HotelReservation.Dal;
 using HotelReservation.Entity;
+using MySql.Data.MySqlClient;
 using System.Drawing.Text;
 using System.Windows.Forms;
 
@@ -183,8 +185,79 @@ namespace HotelReservation.UI
         {
             SetColumnHeaders();
         }
+
+        private void pictureBoxSettings_Click(object sender, EventArgs e)
+        {
+            pnlChangePassword.Visible = !pnlChangePassword.Visible;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSavePassword_Click(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text.Trim();
+            string oldPassword = txtOldPassword.Text.Trim();
+            string newPassword = txtNewPassword.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(oldPassword) || string.IsNullOrWhiteSpace(newPassword))
+            {
+                MessageBox.Show("Lütfen tüm alanları doldurun!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Veritabanı bağlantısı
+            Database db = new Database();
+            using (MySqlConnection conn = db.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Eski şifre doğrulama
+                    string queryCheck = "SELECT COUNT(*) FROM Admins WHERE Email = @Email AND Password = @OldPassword";
+                    using (MySqlCommand cmdCheck = new MySqlCommand(queryCheck, conn))
+                    {
+                        cmdCheck.Parameters.AddWithValue("@Email", email);
+                        cmdCheck.Parameters.AddWithValue("@OldPassword", oldPassword);
+
+                        int userExists = Convert.ToInt32(cmdCheck.ExecuteScalar());
+                        if (userExists == 0)
+                        {
+                            MessageBox.Show("E-posta veya eski şifre hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // Yeni şifre güncelleme
+                    string queryUpdate = "UPDATE Admins SET Password = @NewPassword WHERE Email = @Email";
+                    using (MySqlCommand cmdUpdate = new MySqlCommand(queryUpdate, conn))
+                    {
+                        cmdUpdate.Parameters.AddWithValue("@NewPassword", newPassword);
+                        cmdUpdate.Parameters.AddWithValue("@Email", email);
+                        cmdUpdate.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Şifre başarıyla güncellendi!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Formdaki alanları temizle ve paneli gizle
+                    txtEmail.Clear();
+                    txtOldPassword.Clear();
+                    txtNewPassword.Clear();
+                    pnlChangePassword.Visible = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Hata: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
+    
+
 
                    
 

@@ -42,8 +42,19 @@
             BillDetailsColumn = new DataGridViewButtonColumn();
             btnAddReservation = new Button();
             btnCancelReservation = new Button();
+            pnlChangePassword = new Panel();
+            txtNewPassword = new TextBox();
+            txtOldPassword = new TextBox();
+            txtEmail = new TextBox();
+            btnSavePassword = new Button();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            pictureBoxSettings = new PictureBox();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvReservations).BeginInit();
+            pnlChangePassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSettings).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -169,13 +180,103 @@
             btnCancelReservation.UseVisualStyleBackColor = false;
             btnCancelReservation.Click += btnCancelReservation_Click;
             // 
+            // pnlChangePassword
+            // 
+            pnlChangePassword.BackColor = SystemColors.ControlLight;
+            pnlChangePassword.Controls.Add(txtNewPassword);
+            pnlChangePassword.Controls.Add(txtOldPassword);
+            pnlChangePassword.Controls.Add(txtEmail);
+            pnlChangePassword.Controls.Add(btnSavePassword);
+            pnlChangePassword.Controls.Add(label3);
+            pnlChangePassword.Controls.Add(label2);
+            pnlChangePassword.Controls.Add(label1);
+            pnlChangePassword.Location = new Point(922, 103);
+            pnlChangePassword.Name = "pnlChangePassword";
+            pnlChangePassword.Size = new Size(239, 197);
+            pnlChangePassword.TabIndex = 4;
+            pnlChangePassword.Paint += panel1_Paint;
+            // 
+            // txtNewPassword
+            // 
+            txtNewPassword.Location = new Point(91, 103);
+            txtNewPassword.Name = "txtNewPassword";
+            txtNewPassword.Size = new Size(125, 27);
+            txtNewPassword.TabIndex = 6;
+            // 
+            // txtOldPassword
+            // 
+            txtOldPassword.Location = new Point(91, 61);
+            txtOldPassword.Name = "txtOldPassword";
+            txtOldPassword.Size = new Size(125, 27);
+            txtOldPassword.TabIndex = 5;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(91, 18);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(125, 27);
+            txtEmail.TabIndex = 4;
+            // 
+            // btnSavePassword
+            // 
+            btnSavePassword.BackColor = Color.Red;
+            btnSavePassword.ForeColor = SystemColors.ButtonHighlight;
+            btnSavePassword.Location = new Point(91, 146);
+            btnSavePassword.Name = "btnSavePassword";
+            btnSavePassword.Size = new Size(94, 34);
+            btnSavePassword.TabIndex = 3;
+            btnSavePassword.Text = "Kaydet";
+            btnSavePassword.UseVisualStyleBackColor = false;
+            btnSavePassword.Click += btnSavePassword_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(13, 103);
+            label3.Name = "label3";
+            label3.Size = new Size(77, 20);
+            label3.TabIndex = 2;
+            label3.Text = "Yeni Şifre :";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(11, 61);
+            label2.Name = "label2";
+            label2.Size = new Size(79, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Eski Şifre  :";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(11, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(65, 20);
+            label1.TabIndex = 0;
+            label1.Text = "E-Posta :";
+            // 
+            // pictureBoxSettings
+            // 
+            pictureBoxSettings.BackColor = SystemColors.ControlLight;
+            pictureBoxSettings.Image = Properties.Resources.cogwheel1;
+            pictureBoxSettings.Location = new Point(1104, 52);
+            pictureBoxSettings.Name = "pictureBoxSettings";
+            pictureBoxSettings.Size = new Size(57, 45);
+            pictureBoxSettings.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxSettings.TabIndex = 5;
+            pictureBoxSettings.TabStop = false;
+            pictureBoxSettings.Click += pictureBoxSettings_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SlateGray;
+            BackColor = SystemColors.ControlLight;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1186, 585);
+            Controls.Add(pictureBoxSettings);
+            Controls.Add(pnlChangePassword);
             Controls.Add(btnCancelReservation);
             Controls.Add(btnAddReservation);
             Controls.Add(dgvReservations);
@@ -186,6 +287,9 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvReservations).EndInit();
+            pnlChangePassword.ResumeLayout(false);
+            pnlChangePassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSettings).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -206,5 +310,14 @@
         private Button btnCancelReservation;
         private DataGridViewButtonColumn DownloadBillColumn;
         private DataGridViewButtonColumn BillDetailsColumn;
+        private Panel pnlChangePassword;
+        private PictureBox pictureBoxSettings;
+        private Label label2;
+        private Label label1;
+        private Button btnSavePassword;
+        private Label label3;
+        private TextBox txtNewPassword;
+        private TextBox txtOldPassword;
+        private TextBox txtEmail;
     }
 }
